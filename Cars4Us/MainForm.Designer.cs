@@ -33,6 +33,7 @@
             btnTestDrives = new Button();
             btnPricing = new Button();
             btnOptions = new Button();
+            btnEmployees = new Button();
             SuspendLayout();
             // 
             // btnCars
@@ -82,11 +83,22 @@
             btnOptions.UseVisualStyleBackColor = true;
             btnOptions.Click += btnOptions_Click;
             // 
+            // btnEmployees
+            // 
+            btnEmployees.Location = new Point(709, 283);
+            btnEmployees.Name = "btnEmployees";
+            btnEmployees.Size = new Size(95, 23);
+            btnEmployees.TabIndex = 5;
+            btnEmployees.Text = "Pracownicy";
+            btnEmployees.UseVisualStyleBackColor = true;
+            btnEmployees.Click += btnEmployees_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(820, 450);
+            Controls.Add(btnEmployees);
             Controls.Add(btnOptions);
             Controls.Add(btnPricing);
             Controls.Add(btnTestDrives);
@@ -104,5 +116,6 @@
         private Button btnTestDrives;
         private Button btnPricing;
         private Button btnOptions;
+        private Button btnEmployees;
     }
 }

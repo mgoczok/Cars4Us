@@ -12,5 +12,11 @@ namespace Cars4Us
             CarsForm form = new CarsForm();
             form.ShowDialog();
         }
+
+        private void btnOptions_Click(object sender, EventArgs e)
+        {
+            OptionsForm form = new OptionsForm();
+            form.ShowDialog();
+        }
     }
 }

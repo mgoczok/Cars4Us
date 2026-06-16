@@ -32,6 +32,7 @@
             btnCustomers = new Button();
             btnTestDrives = new Button();
             btnPricing = new Button();
+            btnOptions = new Button();
             SuspendLayout();
             // 
             // btnCars
@@ -71,11 +72,22 @@
             btnPricing.Text = "wycena";
             btnPricing.UseVisualStyleBackColor = true;
             // 
+            // btnOptions
+            // 
+            btnOptions.Location = new Point(609, 283);
+            btnOptions.Name = "btnOptions";
+            btnOptions.Size = new Size(85, 23);
+            btnOptions.TabIndex = 4;
+            btnOptions.Text = "Opcje";
+            btnOptions.UseVisualStyleBackColor = true;
+            btnOptions.Click += btnOptions_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnOptions);
             Controls.Add(btnPricing);
             Controls.Add(btnTestDrives);
             Controls.Add(btnCustomers);
@@ -91,5 +103,6 @@
         private Button btnCustomers;
         private Button btnTestDrives;
         private Button btnPricing;
+        private Button btnOptions;
     }
 }

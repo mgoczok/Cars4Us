@@ -1,16 +1,12 @@
+using System.Drawing;
+using System.Windows.Forms;
+
 namespace Cars4Us
 {
     partial class MainForm
     {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,14 +16,10 @@ namespace Cars4Us
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
+            lblTitle = new Label();
+            lblSubtitle = new Label();
             btnCars = new Button();
             btnCustomers = new Button();
             btnTestDrives = new Button();
@@ -36,81 +28,145 @@ namespace Cars4Us
             btnEmployees = new Button();
             SuspendLayout();
             // 
+            // lblTitle
+            // 
+            lblTitle.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            lblTitle.ForeColor = Color.FromArgb(64, 168, 252);
+            lblTitle.Location = new Point(0, 25);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(550, 45);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "Cars4Us";
+            lblTitle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblSubtitle
+            // 
+            lblSubtitle.Font = new Font("Segoe UI", 9.5F);
+            lblSubtitle.ForeColor = Color.FromArgb(180, 180, 180);
+            lblSubtitle.Location = new Point(0, 70);
+            lblSubtitle.Name = "lblSubtitle";
+            lblSubtitle.Size = new Size(550, 20);
+            lblSubtitle.TabIndex = 1;
+            lblSubtitle.Text = "Panel zarządzania salonem";
+            lblSubtitle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // btnCars
             // 
-            btnCars.Location = new Point(195, 283);
+            btnCars.BackColor = Color.FromArgb(45, 45, 45);
+            btnCars.Cursor = Cursors.Hand;
+            btnCars.FlatAppearance.BorderColor = Color.FromArgb(64, 168, 252);
+            btnCars.FlatStyle = FlatStyle.Flat;
+            btnCars.Font = new Font("Segoe UI", 10F);
+            btnCars.ForeColor = Color.White;
+            btnCars.Location = new Point(55, 120);
             btnCars.Name = "btnCars";
-            btnCars.Size = new Size(75, 23);
-            btnCars.TabIndex = 0;
-            btnCars.Text = "Auta";
-            btnCars.UseVisualStyleBackColor = true;
+            btnCars.Size = new Size(210, 50);
+            btnCars.TabIndex = 2;
+            btnCars.Text = "Samochody";
+            btnCars.UseVisualStyleBackColor = false;
             btnCars.Click += btnCars_Click;
             // 
             // btnCustomers
             // 
-            btnCustomers.Location = new Point(287, 283);
+            btnCustomers.BackColor = Color.FromArgb(45, 45, 45);
+            btnCustomers.Cursor = Cursors.Hand;
+            btnCustomers.FlatAppearance.BorderColor = Color.FromArgb(64, 168, 252);
+            btnCustomers.FlatStyle = FlatStyle.Flat;
+            btnCustomers.Font = new Font("Segoe UI", 10F);
+            btnCustomers.ForeColor = Color.White;
+            btnCustomers.Location = new Point(285, 120);
             btnCustomers.Name = "btnCustomers";
-            btnCustomers.Size = new Size(75, 23);
-            btnCustomers.TabIndex = 1;
+            btnCustomers.Size = new Size(210, 50);
+            btnCustomers.TabIndex = 3;
             btnCustomers.Text = "Klienci";
-            btnCustomers.UseVisualStyleBackColor = true;
+            btnCustomers.UseVisualStyleBackColor = false;
             // 
             // btnTestDrives
             // 
-            btnTestDrives.Location = new Point(379, 283);
+            btnTestDrives.BackColor = Color.FromArgb(45, 45, 45);
+            btnTestDrives.Cursor = Cursors.Hand;
+            btnTestDrives.FlatAppearance.BorderColor = Color.FromArgb(64, 168, 252);
+            btnTestDrives.FlatStyle = FlatStyle.Flat;
+            btnTestDrives.Font = new Font("Segoe UI", 10F);
+            btnTestDrives.ForeColor = Color.White;
+            btnTestDrives.Location = new Point(55, 185);
             btnTestDrives.Name = "btnTestDrives";
-            btnTestDrives.Size = new Size(125, 23);
-            btnTestDrives.TabIndex = 2;
+            btnTestDrives.Size = new Size(210, 50);
+            btnTestDrives.TabIndex = 4;
             btnTestDrives.Text = "Jazdy próbne";
-            btnTestDrives.UseVisualStyleBackColor = true;
+            btnTestDrives.UseVisualStyleBackColor = false;
             // 
             // btnPricing
             // 
-            btnPricing.Location = new Point(519, 283);
+            btnPricing.BackColor = Color.FromArgb(45, 45, 45);
+            btnPricing.Cursor = Cursors.Hand;
+            btnPricing.FlatAppearance.BorderColor = Color.FromArgb(64, 168, 252);
+            btnPricing.FlatStyle = FlatStyle.Flat;
+            btnPricing.Font = new Font("Segoe UI", 10F);
+            btnPricing.ForeColor = Color.White;
+            btnPricing.Location = new Point(285, 185);
             btnPricing.Name = "btnPricing";
-            btnPricing.Size = new Size(75, 23);
-            btnPricing.TabIndex = 3;
-            btnPricing.Text = "wycena";
-            btnPricing.UseVisualStyleBackColor = true;
+            btnPricing.Size = new Size(210, 50);
+            btnPricing.TabIndex = 5;
+            btnPricing.Text = "Kalkulator wyceny";
+            btnPricing.UseVisualStyleBackColor = false;
             btnPricing.Click += btnPricing_Click;
             // 
             // btnOptions
             // 
-            btnOptions.Location = new Point(609, 283);
+            btnOptions.BackColor = Color.FromArgb(45, 45, 45);
+            btnOptions.Cursor = Cursors.Hand;
+            btnOptions.FlatAppearance.BorderColor = Color.FromArgb(64, 168, 252);
+            btnOptions.FlatStyle = FlatStyle.Flat;
+            btnOptions.Font = new Font("Segoe UI", 10F);
+            btnOptions.ForeColor = Color.White;
+            btnOptions.Location = new Point(55, 250);
             btnOptions.Name = "btnOptions";
-            btnOptions.Size = new Size(85, 23);
-            btnOptions.TabIndex = 4;
-            btnOptions.Text = "Opcje";
-            btnOptions.UseVisualStyleBackColor = true;
+            btnOptions.Size = new Size(210, 50);
+            btnOptions.TabIndex = 6;
+            btnOptions.Text = "Opcje i akcesoria";
+            btnOptions.UseVisualStyleBackColor = false;
             btnOptions.Click += btnOptions_Click;
             // 
             // btnEmployees
             // 
-            btnEmployees.Location = new Point(709, 283);
+            btnEmployees.BackColor = Color.FromArgb(45, 45, 45);
+            btnEmployees.Cursor = Cursors.Hand;
+            btnEmployees.FlatAppearance.BorderColor = Color.FromArgb(64, 168, 252);
+            btnEmployees.FlatStyle = FlatStyle.Flat;
+            btnEmployees.Font = new Font("Segoe UI", 10F);
+            btnEmployees.ForeColor = Color.White;
+            btnEmployees.Location = new Point(285, 250);
             btnEmployees.Name = "btnEmployees";
-            btnEmployees.Size = new Size(95, 23);
-            btnEmployees.TabIndex = 5;
+            btnEmployees.Size = new Size(210, 50);
+            btnEmployees.TabIndex = 7;
             btnEmployees.Text = "Pracownicy";
-            btnEmployees.UseVisualStyleBackColor = true;
+            btnEmployees.UseVisualStyleBackColor = false;
             btnEmployees.Click += btnEmployees_Click;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(820, 450);
+            BackColor = Color.FromArgb(30, 30, 30);
+            ClientSize = new Size(550, 430);
             Controls.Add(btnEmployees);
             Controls.Add(btnOptions);
             Controls.Add(btnPricing);
             Controls.Add(btnTestDrives);
             Controls.Add(btnCustomers);
             Controls.Add(btnCars);
+            Controls.Add(lblSubtitle);
+            Controls.Add(lblTitle);
+            Font = new Font("Segoe UI", 9F);
+            ForeColor = Color.White;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cars4Us - Salon Samochodowy";
             ResumeLayout(false);
         }
-
-        #endregion
 
         private Button btnCars;
         private Button btnCustomers;
@@ -118,5 +174,7 @@ namespace Cars4Us
         private Button btnPricing;
         private Button btnOptions;
         private Button btnEmployees;
+        private Label lblTitle;
+        private Label lblSubtitle;
     }
 }

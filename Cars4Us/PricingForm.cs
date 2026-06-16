@@ -122,7 +122,7 @@ namespace Cars4Us
                     financingType);
 
                 // Display results
-                txtBreakdown.Text = result.Breakdown;
+                txtBreakdown.Text = result.Breakdown.Replace("\n", Environment.NewLine);
                 lblFinalPrice.Text = $"{result.FinalPrice:N2} PLN";
             }
             catch (Exception ex)

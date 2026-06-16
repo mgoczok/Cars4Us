@@ -2,15 +2,8 @@ namespace Cars4Us
 {
     partial class EmployeesForm
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,228 +15,315 @@ namespace Cars4Us
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            this.lblFirstName = new System.Windows.Forms.Label();
-            this.lblLastName = new System.Windows.Forms.Label();
-            this.lblRole = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.lblPhone = new System.Windows.Forms.Label();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.txtLastName = new System.Windows.Forms.TextBox();
-            this.cbRole = new System.Windows.Forms.ComboBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDeactivate = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.dgvEmployees = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            lblHeader = new Label();
+            gbEmployeeData = new GroupBox();
+            lblFirstName = new Label();
+            txtFirstName = new TextBox();
+            lblLastName = new Label();
+            txtLastName = new TextBox();
+            lblRole = new Label();
+            cbRole = new ComboBox();
+            lblEmail = new Label();
+            txtEmail = new TextBox();
+            lblPhone = new Label();
+            txtPhone = new TextBox();
+            btnAdd = new Button();
+            btnUpdate = new Button();
+            btnDeactivate = new Button();
+            btnRefresh = new Button();
+            btnClear = new Button();
+            dgvEmployees = new DataGridView();
+            gbEmployeeData.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvEmployees).BeginInit();
+            SuspendLayout();
+            // 
+            // lblHeader
+            // 
+            lblHeader.AutoSize = true;
+            lblHeader.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            lblHeader.ForeColor = Color.FromArgb(64, 168, 252);
+            lblHeader.Location = new Point(20, 15);
+            lblHeader.Name = "lblHeader";
+            lblHeader.Size = new Size(130, 30);
+            lblHeader.TabIndex = 0;
+            lblHeader.Text = "Pracownicy";
+            // 
+            // gbEmployeeData
+            // 
+            gbEmployeeData.Controls.Add(lblFirstName);
+            gbEmployeeData.Controls.Add(txtFirstName);
+            gbEmployeeData.Controls.Add(lblLastName);
+            gbEmployeeData.Controls.Add(txtLastName);
+            gbEmployeeData.Controls.Add(lblRole);
+            gbEmployeeData.Controls.Add(cbRole);
+            gbEmployeeData.Controls.Add(lblEmail);
+            gbEmployeeData.Controls.Add(txtEmail);
+            gbEmployeeData.Controls.Add(lblPhone);
+            gbEmployeeData.Controls.Add(txtPhone);
+            gbEmployeeData.Controls.Add(btnAdd);
+            gbEmployeeData.Controls.Add(btnUpdate);
+            gbEmployeeData.Controls.Add(btnDeactivate);
+            gbEmployeeData.Controls.Add(btnRefresh);
+            gbEmployeeData.Controls.Add(btnClear);
+            gbEmployeeData.ForeColor = Color.White;
+            gbEmployeeData.Location = new Point(20, 50);
+            gbEmployeeData.Name = "gbEmployeeData";
+            gbEmployeeData.Size = new Size(740, 170);
+            gbEmployeeData.TabIndex = 1;
+            gbEmployeeData.TabStop = false;
+            gbEmployeeData.Text = "Dane pracownika";
             // 
             // lblFirstName
             // 
-            this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(30, 20);
-            this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(33, 15);
-            this.lblFirstName.TabIndex = 0;
-            this.lblFirstName.Text = "Imię:";
-            // 
-            // lblLastName
-            // 
-            this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(30, 50);
-            this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(60, 15);
-            this.lblLastName.TabIndex = 1;
-            this.lblLastName.Text = "Nazwisko:";
-            // 
-            // lblRole
-            // 
-            this.lblRole.AutoSize = true;
-            this.lblRole.Location = new System.Drawing.Point(30, 80);
-            this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(33, 15);
-            this.lblRole.TabIndex = 2;
-            this.lblRole.Text = "Rola:";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(300, 20);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(39, 15);
-            this.lblEmail.TabIndex = 3;
-            this.lblEmail.Text = "Email:";
-            // 
-            // lblPhone
-            // 
-            this.lblPhone.AutoSize = true;
-            this.lblPhone.Location = new System.Drawing.Point(300, 50);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(48, 15);
-            this.lblPhone.TabIndex = 4;
-            this.lblPhone.Text = "Telefon:";
+            lblFirstName.AutoSize = true;
+            lblFirstName.Location = new Point(15, 30);
+            lblFirstName.Name = "lblFirstName";
+            lblFirstName.Size = new Size(33, 15);
+            lblFirstName.TabIndex = 0;
+            lblFirstName.Text = "Imię:";
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(100, 17);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(150, 23);
-            this.txtFirstName.TabIndex = 5;
+            txtFirstName.BackColor = Color.FromArgb(45, 45, 45);
+            txtFirstName.BorderStyle = BorderStyle.FixedSingle;
+            txtFirstName.ForeColor = Color.White;
+            txtFirstName.Location = new Point(90, 28);
+            txtFirstName.Name = "txtFirstName";
+            txtFirstName.Size = new Size(240, 23);
+            txtFirstName.TabIndex = 1;
+            // 
+            // lblLastName
+            // 
+            lblLastName.AutoSize = true;
+            lblLastName.Location = new Point(15, 65);
+            lblLastName.Name = "lblLastName";
+            lblLastName.Size = new Size(60, 15);
+            lblLastName.TabIndex = 2;
+            lblLastName.Text = "Nazwisko:";
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(100, 47);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(150, 23);
-            this.txtLastName.TabIndex = 6;
+            txtLastName.BackColor = Color.FromArgb(45, 45, 45);
+            txtLastName.BorderStyle = BorderStyle.FixedSingle;
+            txtLastName.ForeColor = Color.White;
+            txtLastName.Location = new Point(90, 62);
+            txtLastName.Name = "txtLastName";
+            txtLastName.Size = new Size(240, 23);
+            txtLastName.TabIndex = 3;
+            // 
+            // lblRole
+            // 
+            lblRole.AutoSize = true;
+            lblRole.Location = new Point(15, 100);
+            lblRole.Name = "lblRole";
+            lblRole.Size = new Size(33, 15);
+            lblRole.TabIndex = 4;
+            lblRole.Text = "Rola:";
             // 
             // cbRole
             // 
-            this.cbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbRole.FormattingEnabled = true;
-            this.cbRole.Items.AddRange(new object[] {
-            "Salesperson",
-            "Manager",
-            "ServiceTechnician"});
-            this.cbRole.Location = new System.Drawing.Point(100, 77);
-            this.cbRole.Name = "cbRole";
-            this.cbRole.Size = new System.Drawing.Size(150, 23);
-            this.cbRole.TabIndex = 7;
+            cbRole.BackColor = Color.FromArgb(45, 45, 45);
+            cbRole.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbRole.ForeColor = Color.White;
+            cbRole.FormattingEnabled = true;
+            cbRole.Items.AddRange(new object[] { "Salesperson", "Manager", "ServiceTechnician" });
+            cbRole.Location = new Point(90, 97);
+            cbRole.Name = "cbRole";
+            cbRole.Size = new Size(240, 23);
+            cbRole.TabIndex = 5;
+            // 
+            // lblEmail
+            // 
+            lblEmail.AutoSize = true;
+            lblEmail.Location = new Point(380, 30);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(39, 15);
+            lblEmail.TabIndex = 6;
+            lblEmail.Text = "Email:";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(360, 17);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(180, 23);
-            this.txtEmail.TabIndex = 8;
+            txtEmail.BackColor = Color.FromArgb(45, 45, 45);
+            txtEmail.BorderStyle = BorderStyle.FixedSingle;
+            txtEmail.ForeColor = Color.White;
+            txtEmail.Location = new Point(450, 28);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(240, 23);
+            txtEmail.TabIndex = 7;
+            // 
+            // lblPhone
+            // 
+            lblPhone.AutoSize = true;
+            lblPhone.Location = new Point(380, 65);
+            lblPhone.Name = "lblPhone";
+            lblPhone.Size = new Size(48, 15);
+            lblPhone.TabIndex = 8;
+            lblPhone.Text = "Telefon:";
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(360, 47);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(180, 23);
-            this.txtPhone.TabIndex = 9;
+            txtPhone.BackColor = Color.FromArgb(45, 45, 45);
+            txtPhone.BorderStyle = BorderStyle.FixedSingle;
+            txtPhone.ForeColor = Color.White;
+            txtPhone.Location = new Point(450, 62);
+            txtPhone.Name = "txtPhone";
+            txtPhone.Size = new Size(240, 23);
+            txtPhone.TabIndex = 9;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(30, 120);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 10;
-            this.btnAdd.Text = "Dodaj";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            btnAdd.BackColor = Color.FromArgb(45, 45, 45);
+            btnAdd.Cursor = Cursors.Hand;
+            btnAdd.FlatAppearance.BorderColor = Color.FromArgb(64, 168, 252);
+            btnAdd.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.ForeColor = Color.White;
+            btnAdd.Location = new Point(15, 130);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(95, 30);
+            btnAdd.TabIndex = 10;
+            btnAdd.Text = "Dodaj";
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(115, 120);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 11;
-            this.btnUpdate.Text = "Aktualizuj";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            btnUpdate.BackColor = Color.FromArgb(45, 45, 45);
+            btnUpdate.Cursor = Cursors.Hand;
+            btnUpdate.FlatAppearance.BorderColor = Color.FromArgb(64, 168, 252);
+            btnUpdate.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
+            btnUpdate.FlatStyle = FlatStyle.Flat;
+            btnUpdate.ForeColor = Color.White;
+            btnUpdate.Location = new Point(120, 130);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(95, 30);
+            btnUpdate.TabIndex = 11;
+            btnUpdate.Text = "Zaktualizuj";
+            btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnDeactivate
             // 
-            this.btnDeactivate.Location = new System.Drawing.Point(200, 120);
-            this.btnDeactivate.Name = "btnDeactivate";
-            this.btnDeactivate.Size = new System.Drawing.Size(90, 23);
-            this.btnDeactivate.TabIndex = 12;
-            this.btnDeactivate.Text = "Dezaktywuj";
-            this.btnDeactivate.UseVisualStyleBackColor = true;
-            this.btnDeactivate.Click += new System.EventHandler(this.btnDeactivate_Click);
+            btnDeactivate.BackColor = Color.FromArgb(45, 45, 45);
+            btnDeactivate.Cursor = Cursors.Hand;
+            btnDeactivate.FlatAppearance.BorderColor = Color.FromArgb(64, 168, 252);
+            btnDeactivate.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
+            btnDeactivate.FlatStyle = FlatStyle.Flat;
+            btnDeactivate.ForeColor = Color.White;
+            btnDeactivate.Location = new Point(225, 130);
+            btnDeactivate.Name = "btnDeactivate";
+            btnDeactivate.Size = new Size(105, 30);
+            btnDeactivate.TabIndex = 12;
+            btnDeactivate.Text = "Dezaktywuj";
+            btnDeactivate.UseVisualStyleBackColor = false;
+            btnDeactivate.Click += btnDeactivate_Click;
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(300, 120);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
-            this.btnRefresh.TabIndex = 13;
-            this.btnRefresh.Text = "Odśwież";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            btnRefresh.BackColor = Color.FromArgb(45, 45, 45);
+            btnRefresh.Cursor = Cursors.Hand;
+            btnRefresh.FlatAppearance.BorderColor = Color.FromArgb(64, 168, 252);
+            btnRefresh.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
+            btnRefresh.FlatStyle = FlatStyle.Flat;
+            btnRefresh.ForeColor = Color.White;
+            btnRefresh.Location = new Point(500, 130);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(90, 30);
+            btnRefresh.TabIndex = 13;
+            btnRefresh.Text = "Odśwież";
+            btnRefresh.UseVisualStyleBackColor = false;
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(385, 120);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 14;
-            this.btnClear.Text = "Wyczyść";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            btnClear.BackColor = Color.FromArgb(45, 45, 45);
+            btnClear.Cursor = Cursors.Hand;
+            btnClear.FlatAppearance.BorderColor = Color.FromArgb(64, 168, 252);
+            btnClear.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
+            btnClear.FlatStyle = FlatStyle.Flat;
+            btnClear.ForeColor = Color.White;
+            btnClear.Location = new Point(600, 130);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(90, 30);
+            btnClear.TabIndex = 14;
+            btnClear.Text = "Wyczyść";
+            btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
             // 
             // dgvEmployees
             // 
-            this.dgvEmployees.AllowUserToAddRows = false;
-            this.dgvEmployees.AllowUserToDeleteRows = false;
-            this.dgvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmployees.Location = new System.Drawing.Point(30, 160);
-            this.dgvEmployees.MultiSelect = false;
-            this.dgvEmployees.Name = "dgvEmployees";
-            this.dgvEmployees.ReadOnly = true;
-            this.dgvEmployees.RowTemplate.Height = 25;
-            this.dgvEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmployees.Size = new System.Drawing.Size(650, 200);
-            this.dgvEmployees.TabIndex = 15;
-            this.dgvEmployees.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployees_CellClick);
+            dgvEmployees.BackgroundColor = Color.FromArgb(45, 45, 45);
+            dgvEmployees.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(40, 40, 40);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvEmployees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvEmployees.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(45, 45, 45);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(64, 168, 252);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvEmployees.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvEmployees.EnableHeadersVisualStyles = false;
+            dgvEmployees.GridColor = Color.FromArgb(60, 60, 60);
+            dgvEmployees.Location = new Point(20, 235);
+            dgvEmployees.Name = "dgvEmployees";
+            dgvEmployees.Size = new Size(740, 305);
+            dgvEmployees.TabIndex = 2;
+            dgvEmployees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvEmployees.CellClick += dgvEmployees_CellClick;
             // 
             // EmployeesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(714, 381);
-            this.Controls.Add(this.dgvEmployees);
-            this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.btnDeactivate);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.txtPhone);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.cbRole);
-            this.Controls.Add(this.txtLastName);
-            this.Controls.Add(this.txtFirstName);
-            this.Controls.Add(this.lblPhone);
-            this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.lblRole);
-            this.Controls.Add(this.lblLastName);
-            this.Controls.Add(this.lblFirstName);
-            this.Name = "EmployeesForm";
-            this.Text = "Zarządzanie Pracownikami";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(30, 30, 30);
+            ClientSize = new Size(780, 560);
+            Controls.Add(dgvEmployees);
+            Controls.Add(gbEmployeeData);
+            Controls.Add(lblHeader);
+            Font = new Font("Segoe UI", 9F);
+            ForeColor = Color.White;
+            Name = "EmployeesForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Cars4Us - Zarządzanie Pracownikami";
+            gbEmployeeData.ResumeLayout(false);
+            gbEmployeeData.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvEmployees).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblFirstName;
-        private System.Windows.Forms.Label lblLastName;
-        private System.Windows.Forms.Label lblRole;
-        private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.Label lblPhone;
-        private System.Windows.Forms.TextBox txtFirstName;
-        private System.Windows.Forms.TextBox txtLastName;
-        private System.Windows.Forms.ComboBox cbRole;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnDeactivate;
-        private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.DataGridView dgvEmployees;
+        private Label lblHeader;
+        private GroupBox gbEmployeeData;
+        private Label lblFirstName;
+        private TextBox txtFirstName;
+        private Label lblLastName;
+        private TextBox txtLastName;
+        private Label lblRole;
+        private ComboBox cbRole;
+        private Label lblEmail;
+        private TextBox txtEmail;
+        private Label lblPhone;
+        private TextBox txtPhone;
+        private Button btnAdd;
+        private Button btnUpdate;
+        private Button btnDeactivate;
+        private Button btnRefresh;
+        private Button btnClear;
+        private DataGridView dgvEmployees;
     }
 }

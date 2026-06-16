@@ -2,15 +2,8 @@ namespace Cars4Us
 {
     partial class PricingForm
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,12 +15,10 @@ namespace Cars4Us
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
+            lblHeader = new Label();
+            gbCar = new GroupBox();
             lblCar = new Label();
             cbCar = new ComboBox();
             lblBasePrice = new Label();
@@ -38,21 +29,49 @@ namespace Cars4Us
             rbCredit = new RadioButton();
             chkFleetDiscount = new CheckBox();
             chkSeasonalPromotion = new CheckBox();
-            lblOptions = new Label();
+            gbOptions = new GroupBox();
             clbOptions = new CheckedListBox();
             btnCalculate = new Button();
-            lblBreakdownTitle = new Label();
+            gbResult = new GroupBox();
             txtBreakdown = new TextBox();
             lblFinalPriceTitle = new Label();
             lblFinalPrice = new Label();
             ((System.ComponentModel.ISupportInitialize)numBasePrice).BeginInit();
+            gbCar.SuspendLayout();
             gbFinancing.SuspendLayout();
+            gbOptions.SuspendLayout();
+            gbResult.SuspendLayout();
             SuspendLayout();
+            // 
+            // lblHeader
+            // 
+            lblHeader.AutoSize = true;
+            lblHeader.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            lblHeader.ForeColor = Color.FromArgb(64, 168, 252);
+            lblHeader.Location = new Point(20, 15);
+            lblHeader.Name = "lblHeader";
+            lblHeader.Size = new Size(225, 30);
+            lblHeader.TabIndex = 0;
+            lblHeader.Text = "Kalkulator wyceny";
+            // 
+            // gbCar
+            // 
+            gbCar.Controls.Add(lblCar);
+            gbCar.Controls.Add(cbCar);
+            gbCar.Controls.Add(lblBasePrice);
+            gbCar.Controls.Add(numBasePrice);
+            gbCar.ForeColor = Color.White;
+            gbCar.Location = new Point(20, 55);
+            gbCar.Name = "gbCar";
+            gbCar.Size = new Size(400, 120);
+            gbCar.TabIndex = 1;
+            gbCar.TabStop = false;
+            gbCar.Text = "Samochód i cena";
             // 
             // lblCar
             // 
             lblCar.AutoSize = true;
-            lblCar.Location = new Point(15, 15);
+            lblCar.Location = new Point(15, 28);
             lblCar.Name = "lblCar";
             lblCar.Size = new Size(69, 15);
             lblCar.TabIndex = 0;
@@ -60,18 +79,20 @@ namespace Cars4Us
             // 
             // cbCar
             // 
+            cbCar.BackColor = Color.FromArgb(45, 45, 45);
             cbCar.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbCar.ForeColor = Color.White;
             cbCar.FormattingEnabled = true;
-            cbCar.Location = new Point(15, 35);
+            cbCar.Location = new Point(15, 48);
             cbCar.Name = "cbCar";
-            cbCar.Size = new Size(375, 23);
+            cbCar.Size = new Size(370, 23);
             cbCar.TabIndex = 1;
             cbCar.SelectedIndexChanged += cbCar_SelectedIndexChanged;
             // 
             // lblBasePrice
             // 
             lblBasePrice.AutoSize = true;
-            lblBasePrice.Location = new Point(15, 72);
+            lblBasePrice.Location = new Point(15, 84);
             lblBasePrice.Name = "lblBasePrice";
             lblBasePrice.Size = new Size(113, 15);
             lblBasePrice.TabIndex = 2;
@@ -79,8 +100,10 @@ namespace Cars4Us
             // 
             // numBasePrice
             // 
+            numBasePrice.BackColor = Color.FromArgb(45, 45, 45);
             numBasePrice.DecimalPlaces = 2;
-            numBasePrice.Location = new Point(160, 70);
+            numBasePrice.ForeColor = Color.White;
+            numBasePrice.Location = new Point(155, 82);
             numBasePrice.Maximum = new decimal(new int[] {
             99999999,
             0,
@@ -93,21 +116,24 @@ namespace Cars4Us
             // 
             // gbFinancing
             // 
-            gbFinancing.Controls.Add(rbCredit);
-            gbFinancing.Controls.Add(rbLeasing);
             gbFinancing.Controls.Add(rbCash);
-            gbFinancing.Location = new Point(15, 108);
+            gbFinancing.Controls.Add(rbLeasing);
+            gbFinancing.Controls.Add(rbCredit);
+            gbFinancing.Controls.Add(chkFleetDiscount);
+            gbFinancing.Controls.Add(chkSeasonalPromotion);
+            gbFinancing.ForeColor = Color.White;
+            gbFinancing.Location = new Point(20, 185);
             gbFinancing.Name = "gbFinancing";
-            gbFinancing.Size = new Size(375, 60);
-            gbFinancing.TabIndex = 4;
+            gbFinancing.Size = new Size(400, 120);
+            gbFinancing.TabIndex = 2;
             gbFinancing.TabStop = false;
-            gbFinancing.Text = "Typ finansowania";
+            gbFinancing.Text = "Finansowanie i rabaty";
             // 
             // rbCash
             // 
             rbCash.AutoSize = true;
             rbCash.Checked = true;
-            rbCash.Location = new Point(15, 25);
+            rbCash.Location = new Point(15, 28);
             rbCash.Name = "rbCash";
             rbCash.Size = new Size(74, 19);
             rbCash.TabIndex = 0;
@@ -118,7 +144,7 @@ namespace Cars4Us
             // rbLeasing
             // 
             rbLeasing.AutoSize = true;
-            rbLeasing.Location = new Point(130, 25);
+            rbLeasing.Location = new Point(130, 28);
             rbLeasing.Name = "rbLeasing";
             rbLeasing.Size = new Size(64, 19);
             rbLeasing.TabIndex = 1;
@@ -128,7 +154,7 @@ namespace Cars4Us
             // rbCredit
             // 
             rbCredit.AutoSize = true;
-            rbCredit.Location = new Point(245, 25);
+            rbCredit.Location = new Point(245, 28);
             rbCredit.Name = "rbCredit";
             rbCredit.Size = new Size(59, 19);
             rbCredit.TabIndex = 2;
@@ -138,123 +164,145 @@ namespace Cars4Us
             // chkFleetDiscount
             // 
             chkFleetDiscount.AutoSize = true;
-            chkFleetDiscount.Location = new Point(15, 182);
+            chkFleetDiscount.Location = new Point(15, 60);
             chkFleetDiscount.Name = "chkFleetDiscount";
             chkFleetDiscount.Size = new Size(138, 19);
-            chkFleetDiscount.TabIndex = 5;
+            chkFleetDiscount.TabIndex = 3;
             chkFleetDiscount.Text = "Rabat flotowy (-5%)";
             chkFleetDiscount.UseVisualStyleBackColor = true;
             // 
             // chkSeasonalPromotion
             // 
             chkSeasonalPromotion.AutoSize = true;
-            chkSeasonalPromotion.Location = new Point(15, 208);
+            chkSeasonalPromotion.Location = new Point(15, 88);
             chkSeasonalPromotion.Name = "chkSeasonalPromotion";
             chkSeasonalPromotion.Size = new Size(167, 19);
-            chkSeasonalPromotion.TabIndex = 6;
+            chkSeasonalPromotion.TabIndex = 4;
             chkSeasonalPromotion.Text = "Promocja sezonowa (-3%)";
             chkSeasonalPromotion.UseVisualStyleBackColor = true;
             // 
-            // lblOptions
+            // gbOptions
             // 
-            lblOptions.AutoSize = true;
-            lblOptions.Location = new Point(420, 15);
-            lblOptions.Name = "lblOptions";
-            lblOptions.Size = new Size(96, 15);
-            lblOptions.TabIndex = 7;
-            lblOptions.Text = "Dostępne opcje:";
+            gbOptions.Controls.Add(clbOptions);
+            gbOptions.ForeColor = Color.White;
+            gbOptions.Location = new Point(440, 55);
+            gbOptions.Name = "gbOptions";
+            gbOptions.Size = new Size(430, 250);
+            gbOptions.TabIndex = 3;
+            gbOptions.TabStop = false;
+            gbOptions.Text = "Dostępne opcje i akcesoria";
             // 
             // clbOptions
             // 
+            clbOptions.BackColor = Color.FromArgb(45, 45, 45);
+            clbOptions.BorderStyle = BorderStyle.FixedSingle;
             clbOptions.CheckOnClick = true;
+            clbOptions.ForeColor = Color.White;
             clbOptions.FormattingEnabled = true;
-            clbOptions.Location = new Point(420, 35);
+            clbOptions.Location = new Point(10, 22);
             clbOptions.Name = "clbOptions";
-            clbOptions.Size = new Size(440, 256);
-            clbOptions.TabIndex = 8;
+            clbOptions.Size = new Size(410, 218);
+            clbOptions.TabIndex = 0;
             // 
             // btnCalculate
             // 
-            btnCalculate.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnCalculate.Location = new Point(15, 248);
+            btnCalculate.BackColor = Color.FromArgb(45, 45, 45);
+            btnCalculate.Cursor = Cursors.Hand;
+            btnCalculate.FlatAppearance.BorderColor = Color.FromArgb(64, 168, 252);
+            btnCalculate.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
+            btnCalculate.FlatStyle = FlatStyle.Flat;
+            btnCalculate.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnCalculate.ForeColor = Color.White;
+            btnCalculate.Location = new Point(20, 318);
             btnCalculate.Name = "btnCalculate";
-            btnCalculate.Size = new Size(200, 35);
-            btnCalculate.TabIndex = 9;
+            btnCalculate.Size = new Size(400, 40);
+            btnCalculate.TabIndex = 4;
             btnCalculate.Text = "Oblicz wycenę";
-            btnCalculate.UseVisualStyleBackColor = true;
+            btnCalculate.UseVisualStyleBackColor = false;
             btnCalculate.Click += btnCalculate_Click;
             // 
-            // lblBreakdownTitle
+            // gbResult
             // 
-            lblBreakdownTitle.AutoSize = true;
-            lblBreakdownTitle.Location = new Point(15, 300);
-            lblBreakdownTitle.Name = "lblBreakdownTitle";
-            lblBreakdownTitle.Size = new Size(87, 15);
-            lblBreakdownTitle.TabIndex = 10;
-            lblBreakdownTitle.Text = "Rozbicie ceny:";
+            gbResult.Controls.Add(txtBreakdown);
+            gbResult.Controls.Add(lblFinalPriceTitle);
+            gbResult.Controls.Add(lblFinalPrice);
+            gbResult.ForeColor = Color.White;
+            gbResult.Location = new Point(20, 370);
+            gbResult.Name = "gbResult";
+            gbResult.Size = new Size(850, 250);
+            gbResult.TabIndex = 5;
+            gbResult.TabStop = false;
+            gbResult.Text = "Wynik wyceny";
             // 
             // txtBreakdown
             // 
-            txtBreakdown.Font = new Font("Consolas", 9.75F);
-            txtBreakdown.Location = new Point(15, 320);
+            txtBreakdown.BackColor = Color.FromArgb(45, 45, 45);
+            txtBreakdown.BorderStyle = BorderStyle.FixedSingle;
+            txtBreakdown.Font = new Font("Consolas", 10F);
+            txtBreakdown.ForeColor = Color.White;
+            txtBreakdown.Location = new Point(10, 25);
             txtBreakdown.Multiline = true;
             txtBreakdown.Name = "txtBreakdown";
             txtBreakdown.ReadOnly = true;
             txtBreakdown.ScrollBars = ScrollBars.Vertical;
-            txtBreakdown.Size = new Size(845, 220);
-            txtBreakdown.TabIndex = 11;
+            txtBreakdown.Size = new Size(830, 175);
+            txtBreakdown.TabIndex = 0;
             // 
             // lblFinalPriceTitle
             // 
             lblFinalPriceTitle.AutoSize = true;
-            lblFinalPriceTitle.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            lblFinalPriceTitle.Location = new Point(15, 555);
+            lblFinalPriceTitle.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblFinalPriceTitle.ForeColor = Color.White;
+            lblFinalPriceTitle.Location = new Point(10, 212);
             lblFinalPriceTitle.Name = "lblFinalPriceTitle";
-            lblFinalPriceTitle.Size = new Size(120, 20);
-            lblFinalPriceTitle.TabIndex = 12;
+            lblFinalPriceTitle.Size = new Size(128, 21);
+            lblFinalPriceTitle.TabIndex = 1;
             lblFinalPriceTitle.Text = "Cena końcowa:";
             // 
             // lblFinalPrice
             // 
             lblFinalPrice.AutoSize = true;
-            lblFinalPrice.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            lblFinalPrice.ForeColor = Color.DarkGreen;
-            lblFinalPrice.Location = new Point(145, 550);
+            lblFinalPrice.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            lblFinalPrice.ForeColor = Color.FromArgb(50, 205, 50);
+            lblFinalPrice.Location = new Point(145, 205);
             lblFinalPrice.Name = "lblFinalPrice";
-            lblFinalPrice.Size = new Size(88, 25);
-            lblFinalPrice.TabIndex = 13;
+            lblFinalPrice.Size = new Size(106, 30);
+            lblFinalPrice.TabIndex = 2;
             lblFinalPrice.Text = "0,00 PLN";
             // 
             // PricingForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(880, 590);
-            Controls.Add(lblFinalPrice);
-            Controls.Add(lblFinalPriceTitle);
-            Controls.Add(txtBreakdown);
-            Controls.Add(lblBreakdownTitle);
+            BackColor = Color.FromArgb(30, 30, 30);
+            ClientSize = new Size(890, 635);
+            Controls.Add(gbResult);
             Controls.Add(btnCalculate);
-            Controls.Add(clbOptions);
-            Controls.Add(lblOptions);
-            Controls.Add(chkSeasonalPromotion);
-            Controls.Add(chkFleetDiscount);
+            Controls.Add(gbOptions);
             Controls.Add(gbFinancing);
-            Controls.Add(numBasePrice);
-            Controls.Add(lblBasePrice);
-            Controls.Add(cbCar);
-            Controls.Add(lblCar);
+            Controls.Add(gbCar);
+            Controls.Add(lblHeader);
+            Font = new Font("Segoe UI", 9F);
+            ForeColor = Color.White;
             Name = "PricingForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cars4Us - Kalkulator Wyceny";
             ((System.ComponentModel.ISupportInitialize)numBasePrice).EndInit();
+            gbCar.ResumeLayout(false);
+            gbCar.PerformLayout();
             gbFinancing.ResumeLayout(false);
             gbFinancing.PerformLayout();
+            gbOptions.ResumeLayout(false);
+            gbResult.ResumeLayout(false);
+            gbResult.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
+        private Label lblHeader;
+        private GroupBox gbCar;
         private Label lblCar;
         private ComboBox cbCar;
         private Label lblBasePrice;
@@ -265,10 +313,10 @@ namespace Cars4Us
         private RadioButton rbCredit;
         private CheckBox chkFleetDiscount;
         private CheckBox chkSeasonalPromotion;
-        private Label lblOptions;
+        private GroupBox gbOptions;
         private CheckedListBox clbOptions;
         private Button btnCalculate;
-        private Label lblBreakdownTitle;
+        private GroupBox gbResult;
         private TextBox txtBreakdown;
         private Label lblFinalPriceTitle;
         private Label lblFinalPrice;

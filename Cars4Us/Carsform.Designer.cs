@@ -1,16 +1,12 @@
-﻿namespace Cars4Us
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace Cars4Us
 {
     partial class CarsForm
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,20 +16,17 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
+            label7 = new Label();
             txtVin = new TextBox();
             txtBrand = new TextBox();
             txtModel = new TextBox();
@@ -41,177 +34,241 @@
             txtPrice = new TextBox();
             cbEngine = new ComboBox();
             btnAdd = new Button();
-            dgvCars = new DataGridView();
             btnDelete = new Button();
-            label7 = new Label();
+            dgvCars = new DataGridView();
+            gbCarData = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)dgvCars).BeginInit();
+            gbCarData.SuspendLayout();
             SuspendLayout();
+            // 
+            // label7
+            // 
+            label7.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            label7.ForeColor = Color.FromArgb(64, 168, 252);
+            label7.Location = new Point(0, 15);
+            label7.Name = "label7";
+            label7.Size = new Size(950, 42);
+            label7.TabIndex = 0;
+            label7.Text = "Cars4Us";
+            label7.TextAlign = ContentAlignment.MiddleCenter;
+            label7.Click += label7_Click;
+            // 
+            // gbCarData
+            // 
+            gbCarData.Controls.Add(label1);
+            gbCarData.Controls.Add(txtVin);
+            gbCarData.Controls.Add(label2);
+            gbCarData.Controls.Add(txtBrand);
+            gbCarData.Controls.Add(label3);
+            gbCarData.Controls.Add(txtModel);
+            gbCarData.Controls.Add(label4);
+            gbCarData.Controls.Add(txtMileage);
+            gbCarData.Controls.Add(label5);
+            gbCarData.Controls.Add(txtPrice);
+            gbCarData.Controls.Add(label6);
+            gbCarData.Controls.Add(cbEngine);
+            gbCarData.Controls.Add(btnAdd);
+            gbCarData.Controls.Add(btnDelete);
+            gbCarData.ForeColor = Color.White;
+            gbCarData.Location = new Point(20, 70);
+            gbCarData.Name = "gbCarData";
+            gbCarData.Size = new Size(350, 310);
+            gbCarData.TabIndex = 1;
+            gbCarData.TabStop = false;
+            gbCarData.Text = "Dane samochodu";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(120, 263);
+            label1.Location = new Point(20, 35);
             label1.Name = "label1";
-            label1.Size = new Size(24, 15);
+            label1.Size = new Size(29, 15);
             label1.TabIndex = 0;
-            label1.Text = "Vin";
+            label1.Text = "VIN:";
+            // 
+            // txtVin
+            // 
+            txtVin.BackColor = Color.FromArgb(45, 45, 45);
+            txtVin.BorderStyle = BorderStyle.FixedSingle;
+            txtVin.ForeColor = Color.White;
+            txtVin.Location = new Point(120, 32);
+            txtVin.Name = "txtVin";
+            txtVin.Size = new Size(200, 23);
+            txtVin.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(120, 295);
+            label2.Location = new Point(20, 70);
             label2.Name = "label2";
-            label2.Size = new Size(40, 15);
-            label2.TabIndex = 1;
-            label2.Text = "Marka";
+            label2.Size = new Size(43, 15);
+            label2.TabIndex = 2;
+            label2.Text = "Marka:";
+            // 
+            // txtBrand
+            // 
+            txtBrand.BackColor = Color.FromArgb(45, 45, 45);
+            txtBrand.BorderStyle = BorderStyle.FixedSingle;
+            txtBrand.ForeColor = Color.White;
+            txtBrand.Location = new Point(120, 67);
+            txtBrand.Name = "txtBrand";
+            txtBrand.Size = new Size(200, 23);
+            txtBrand.TabIndex = 3;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(120, 329);
+            label3.Location = new Point(20, 105);
             label3.Name = "label3";
-            label3.Size = new Size(41, 15);
-            label3.TabIndex = 2;
-            label3.Text = "Model";
+            label3.Size = new Size(44, 15);
+            label3.TabIndex = 4;
+            label3.Text = "Model:";
+            // 
+            // txtModel
+            // 
+            txtModel.BackColor = Color.FromArgb(45, 45, 45);
+            txtModel.BorderStyle = BorderStyle.FixedSingle;
+            txtModel.ForeColor = Color.White;
+            txtModel.Location = new Point(120, 102);
+            txtModel.Name = "txtModel";
+            txtModel.Size = new Size(200, 23);
+            txtModel.TabIndex = 5;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(120, 358);
+            label4.Location = new Point(20, 140);
             label4.Name = "label4";
-            label4.Size = new Size(35, 15);
-            label4.TabIndex = 3;
-            label4.Text = "Silnik";
+            label4.Size = new Size(56, 15);
+            label4.TabIndex = 6;
+            label4.Text = "Przebieg:";
+            // 
+            // txtMileage
+            // 
+            txtMileage.BackColor = Color.FromArgb(45, 45, 45);
+            txtMileage.BorderStyle = BorderStyle.FixedSingle;
+            txtMileage.ForeColor = Color.White;
+            txtMileage.Location = new Point(120, 137);
+            txtMileage.Name = "txtMileage";
+            txtMileage.Size = new Size(200, 23);
+            txtMileage.TabIndex = 7;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(120, 387);
+            label5.Location = new Point(20, 175);
             label5.Name = "label5";
-            label5.Size = new Size(52, 15);
-            label5.TabIndex = 4;
-            label5.Text = "Przebieg";
+            label5.Size = new Size(37, 15);
+            label5.TabIndex = 8;
+            label5.Text = "Cena:";
+            // 
+            // txtPrice
+            // 
+            txtPrice.BackColor = Color.FromArgb(45, 45, 45);
+            txtPrice.BorderStyle = BorderStyle.FixedSingle;
+            txtPrice.ForeColor = Color.White;
+            txtPrice.Location = new Point(120, 172);
+            txtPrice.Name = "txtPrice";
+            txtPrice.Size = new Size(200, 23);
+            txtPrice.TabIndex = 9;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(121, 419);
+            label6.Location = new Point(20, 210);
             label6.Name = "label6";
-            label6.Size = new Size(34, 15);
-            label6.TabIndex = 5;
-            label6.Text = "Cena";
-            // 
-            // txtVin
-            // 
-            txtVin.Location = new Point(178, 263);
-            txtVin.Name = "txtVin";
-            txtVin.Size = new Size(100, 23);
-            txtVin.TabIndex = 6;
-            // 
-            // txtBrand
-            // 
-            txtBrand.Location = new Point(178, 295);
-            txtBrand.Name = "txtBrand";
-            txtBrand.Size = new Size(100, 23);
-            txtBrand.TabIndex = 7;
-            // 
-            // txtModel
-            // 
-            txtModel.Location = new Point(178, 321);
-            txtModel.Name = "txtModel";
-            txtModel.Size = new Size(100, 23);
-            txtModel.TabIndex = 8;
-            // 
-            // txtMileage
-            // 
-            txtMileage.Location = new Point(178, 379);
-            txtMileage.Name = "txtMileage";
-            txtMileage.Size = new Size(100, 23);
-            txtMileage.TabIndex = 9;
-            // 
-            // txtPrice
-            // 
-            txtPrice.Location = new Point(178, 411);
-            txtPrice.Name = "txtPrice";
-            txtPrice.Size = new Size(100, 23);
-            txtPrice.TabIndex = 11;
+            label6.Size = new Size(38, 15);
+            label6.TabIndex = 10;
+            label6.Text = "Silnik:";
             // 
             // cbEngine
             // 
+            cbEngine.BackColor = Color.FromArgb(45, 45, 45);
+            cbEngine.ForeColor = Color.White;
             cbEngine.FormattingEnabled = true;
             cbEngine.Items.AddRange(new object[] { "Benzyna", "", "Diesel", "", "Elektryczny", "", "Hybryda" });
-            cbEngine.Location = new Point(178, 350);
+            cbEngine.Location = new Point(120, 207);
             cbEngine.Name = "cbEngine";
-            cbEngine.Size = new Size(100, 23);
-            cbEngine.TabIndex = 12;
+            cbEngine.Size = new Size(200, 23);
+            cbEngine.TabIndex = 11;
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(178, 449);
+            btnAdd.BackColor = Color.FromArgb(45, 45, 45);
+            btnAdd.Cursor = Cursors.Hand;
+            btnAdd.FlatAppearance.BorderColor = Color.FromArgb(64, 168, 252);
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.ForeColor = Color.White;
+            btnAdd.Location = new Point(20, 250);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(75, 23);
-            btnAdd.TabIndex = 13;
-            btnAdd.Text = "Dodaj Auto";
-            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Size = new Size(145, 35);
+            btnAdd.TabIndex = 12;
+            btnAdd.Text = "Dodaj";
+            btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
-            // 
-            // dgvCars
-            // 
-            dgvCars.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCars.Location = new Point(462, 164);
-            dgvCars.Name = "dgvCars";
-            dgvCars.Size = new Size(499, 226);
-            dgvCars.TabIndex = 14;
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(272, 449);
+            btnDelete.BackColor = Color.FromArgb(45, 45, 45);
+            btnDelete.Cursor = Cursors.Hand;
+            btnDelete.FlatAppearance.BorderColor = Color.FromArgb(64, 168, 252);
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.ForeColor = Color.White;
+            btnDelete.Location = new Point(175, 250);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(75, 23);
-            btnDelete.TabIndex = 15;
-            btnDelete.Text = "Usuń Auto";
-            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Size = new Size(145, 35);
+            btnDelete.TabIndex = 13;
+            btnDelete.Text = "Usuń";
+            btnDelete.UseVisualStyleBackColor = false;
             // 
-            // label7
+            // dgvCars
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 23F);
-            label7.Location = new Point(462, 36);
-            label7.Name = "label7";
-            label7.Size = new Size(125, 42);
-            label7.TabIndex = 16;
-            label7.Text = "Cars4us";
-            label7.Click += label7_Click;
+            dgvCars.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCars.BackgroundColor = Color.FromArgb(45, 45, 45);
+            dgvCars.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(40, 40, 40);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvCars.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvCars.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(45, 45, 45);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(64, 168, 252);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvCars.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvCars.EnableHeadersVisualStyles = false;
+            dgvCars.GridColor = Color.FromArgb(60, 60, 60);
+            dgvCars.Location = new Point(390, 70);
+            dgvCars.Name = "dgvCars";
+            dgvCars.Size = new Size(540, 420);
+            dgvCars.TabIndex = 2;
             // 
             // CarsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1096, 551);
-            Controls.Add(label7);
-            Controls.Add(btnDelete);
+            BackColor = Color.FromArgb(30, 30, 30);
+            ClientSize = new Size(950, 550);
             Controls.Add(dgvCars);
-            Controls.Add(btnAdd);
-            Controls.Add(cbEngine);
-            Controls.Add(txtPrice);
-            Controls.Add(txtMileage);
-            Controls.Add(txtModel);
-            Controls.Add(txtBrand);
-            Controls.Add(txtVin);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(gbCarData);
+            Controls.Add(label7);
+            Font = new Font("Segoe UI", 9F);
+            ForeColor = Color.White;
             Name = "CarsForm";
-            Text = "Cars4us";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Cars4Us - Zarządzanie Samochodami";
             ((System.ComponentModel.ISupportInitialize)dgvCars).EndInit();
+            gbCarData.ResumeLayout(false);
+            gbCarData.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
-
-        #endregion
 
         private Label label1;
         private Label label2;
@@ -219,6 +276,7 @@
         private Label label4;
         private Label label5;
         private Label label6;
+        private Label label7;
         private TextBox txtVin;
         private TextBox txtBrand;
         private TextBox txtModel;
@@ -226,8 +284,8 @@
         private TextBox txtPrice;
         private ComboBox cbEngine;
         private Button btnAdd;
-        private DataGridView dgvCars;
         private Button btnDelete;
-        private Label label7;
+        private DataGridView dgvCars;
+        private GroupBox gbCarData;
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Cars4Us
+namespace Cars4Us
 {
     partial class MainForm
     {
@@ -72,6 +72,7 @@
             btnPricing.TabIndex = 3;
             btnPricing.Text = "wycena";
             btnPricing.UseVisualStyleBackColor = true;
+            btnPricing.Click += btnPricing_Click;
             // 
             // btnOptions
             // 

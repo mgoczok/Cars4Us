@@ -1,15 +1,21 @@
-## .NET Core / .NET 10
+# Build output
 bin/
 obj/
+
+# Visual Studio
+.vs/
 *.user
 *.suo
 *.userosscache
-*.sln.docuser.suo
+*.sln.docstates
 
-## Visual Studio / VS Code tymczasowe
-.vs/
+# VS Code
 .vscode/
 
-## Pliki bazy danych (skoro używasz XAMPP, plik .sql traktuj jako backup, ale nie wrzucaj plików tymczasowych)
-*.db
+# Logs and local database files
 *.log
+*.db
+
+# OS files
+.DS_Store
+Thumbs.db

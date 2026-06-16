@@ -18,5 +18,11 @@ namespace Cars4Us
             OptionsForm form = new OptionsForm();
             form.ShowDialog();
         }
+
+        private void btnEmployees_Click(object sender, EventArgs e)
+        {
+            EmployeesForm form = new EmployeesForm();
+            form.ShowDialog();
+        }
     }
 }

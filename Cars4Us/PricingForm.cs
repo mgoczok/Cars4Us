@@ -91,6 +91,13 @@ namespace Cars4Us
             {
                 decimal basePrice = numBasePrice.Value;
 
+                if (cbCar.SelectedIndex <= 0)
+                {
+                    MessageBox.Show("Proszę wybrać samochód z listy.",
+                        "Błąd walidacji", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 if (basePrice <= 0)
                 {
                     MessageBox.Show("Cena bazowa musi być większa niż 0.",

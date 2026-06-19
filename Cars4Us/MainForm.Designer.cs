@@ -20,6 +20,7 @@ namespace Cars4Us
         {
             lblTitle = new Label();
             lblSubtitle = new Label();
+            lblFooter = new Label();
             btnCars = new Button();
             btnCustomers = new Button();
             btnTestDrives = new Button();
@@ -31,22 +32,22 @@ namespace Cars4Us
             // 
             // lblTitle
             // 
-            lblTitle.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            lblTitle.Font = new Font("Segoe UI", 32F, FontStyle.Bold);
             lblTitle.ForeColor = Color.FromArgb(64, 168, 252);
-            lblTitle.Location = new Point(0, 25);
+            lblTitle.Location = new Point(0, 30);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(550, 45);
+            lblTitle.Size = new Size(850, 60);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Cars4Us";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblSubtitle
             // 
-            lblSubtitle.Font = new Font("Segoe UI", 9.5F);
+            lblSubtitle.Font = new Font("Segoe UI", 12F);
             lblSubtitle.ForeColor = Color.FromArgb(180, 180, 180);
-            lblSubtitle.Location = new Point(0, 70);
+            lblSubtitle.Location = new Point(0, 90);
             lblSubtitle.Name = "lblSubtitle";
-            lblSubtitle.Size = new Size(550, 20);
+            lblSubtitle.Size = new Size(850, 30);
             lblSubtitle.TabIndex = 1;
             lblSubtitle.Text = "Panel zarządzania salonem";
             lblSubtitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -55,15 +56,16 @@ namespace Cars4Us
             // 
             btnCars.BackColor = Color.FromArgb(45, 45, 45);
             btnCars.Cursor = Cursors.Hand;
-            btnCars.FlatAppearance.BorderColor = Color.FromArgb(64, 168, 252);
+            btnCars.FlatAppearance.BorderSize = 0;
+            btnCars.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
             btnCars.FlatStyle = FlatStyle.Flat;
-            btnCars.Font = new Font("Segoe UI", 10F);
+            btnCars.Font = new Font("Segoe UI", 13F);
             btnCars.ForeColor = Color.White;
-            btnCars.Location = new Point(55, 120);
+            btnCars.Location = new Point(75, 160);
             btnCars.Name = "btnCars";
-            btnCars.Size = new Size(210, 50);
+            btnCars.Size = new Size(160, 120);
             btnCars.TabIndex = 2;
-            btnCars.Text = "Samochody";
+            btnCars.Text = "🚗\r\n\r\nSamochody";
             btnCars.UseVisualStyleBackColor = false;
             btnCars.Click += btnCars_Click;
             // 
@@ -71,45 +73,48 @@ namespace Cars4Us
             // 
             btnCustomers.BackColor = Color.FromArgb(45, 45, 45);
             btnCustomers.Cursor = Cursors.Hand;
-            btnCustomers.FlatAppearance.BorderColor = Color.FromArgb(64, 168, 252);
+            btnCustomers.FlatAppearance.BorderSize = 0;
+            btnCustomers.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
             btnCustomers.FlatStyle = FlatStyle.Flat;
-            btnCustomers.Font = new Font("Segoe UI", 10F);
+            btnCustomers.Font = new Font("Segoe UI", 13F);
             btnCustomers.ForeColor = Color.White;
-            btnCustomers.Location = new Point(285, 120);
+            btnCustomers.Location = new Point(255, 160);
             btnCustomers.Name = "btnCustomers";
-            btnCustomers.Size = new Size(210, 50);
+            btnCustomers.Size = new Size(160, 120);
             btnCustomers.TabIndex = 3;
-            btnCustomers.Text = "Klienci";
+            btnCustomers.Text = "👤\r\n\r\nKlienci";
             btnCustomers.UseVisualStyleBackColor = false;
             // 
             // btnTestDrives
             // 
             btnTestDrives.BackColor = Color.FromArgb(45, 45, 45);
             btnTestDrives.Cursor = Cursors.Hand;
-            btnTestDrives.FlatAppearance.BorderColor = Color.FromArgb(64, 168, 252);
+            btnTestDrives.FlatAppearance.BorderSize = 0;
+            btnTestDrives.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
             btnTestDrives.FlatStyle = FlatStyle.Flat;
-            btnTestDrives.Font = new Font("Segoe UI", 10F);
+            btnTestDrives.Font = new Font("Segoe UI", 13F);
             btnTestDrives.ForeColor = Color.White;
-            btnTestDrives.Location = new Point(55, 185);
+            btnTestDrives.Location = new Point(435, 160);
             btnTestDrives.Name = "btnTestDrives";
-            btnTestDrives.Size = new Size(210, 50);
+            btnTestDrives.Size = new Size(160, 120);
             btnTestDrives.TabIndex = 4;
-            btnTestDrives.Text = "Jazdy próbne";
+            btnTestDrives.Text = "📅\r\n\r\nJazdy próbne";
             btnTestDrives.UseVisualStyleBackColor = false;
             // 
             // btnPricing
             // 
             btnPricing.BackColor = Color.FromArgb(45, 45, 45);
             btnPricing.Cursor = Cursors.Hand;
-            btnPricing.FlatAppearance.BorderColor = Color.FromArgb(64, 168, 252);
+            btnPricing.FlatAppearance.BorderSize = 0;
+            btnPricing.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
             btnPricing.FlatStyle = FlatStyle.Flat;
-            btnPricing.Font = new Font("Segoe UI", 10F);
+            btnPricing.Font = new Font("Segoe UI", 12F);
             btnPricing.ForeColor = Color.White;
-            btnPricing.Location = new Point(285, 185);
+            btnPricing.Location = new Point(615, 160);
             btnPricing.Name = "btnPricing";
-            btnPricing.Size = new Size(210, 50);
+            btnPricing.Size = new Size(160, 120);
             btnPricing.TabIndex = 5;
-            btnPricing.Text = "Kalkulator wyceny";
+            btnPricing.Text = "🧮\r\n\r\nKalkulator wyceny";
             btnPricing.UseVisualStyleBackColor = false;
             btnPricing.Click += btnPricing_Click;
             // 
@@ -117,15 +122,16 @@ namespace Cars4Us
             // 
             btnOptions.BackColor = Color.FromArgb(45, 45, 45);
             btnOptions.Cursor = Cursors.Hand;
-            btnOptions.FlatAppearance.BorderColor = Color.FromArgb(64, 168, 252);
+            btnOptions.FlatAppearance.BorderSize = 0;
+            btnOptions.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
             btnOptions.FlatStyle = FlatStyle.Flat;
-            btnOptions.Font = new Font("Segoe UI", 10F);
+            btnOptions.Font = new Font("Segoe UI", 12F);
             btnOptions.ForeColor = Color.White;
-            btnOptions.Location = new Point(55, 250);
+            btnOptions.Location = new Point(165, 300);
             btnOptions.Name = "btnOptions";
-            btnOptions.Size = new Size(210, 50);
+            btnOptions.Size = new Size(160, 120);
             btnOptions.TabIndex = 6;
-            btnOptions.Text = "Opcje i akcesoria";
+            btnOptions.Text = "⚙\r\n\r\nOpcje i akcesoria";
             btnOptions.UseVisualStyleBackColor = false;
             btnOptions.Click += btnOptions_Click;
             // 
@@ -133,15 +139,16 @@ namespace Cars4Us
             // 
             btnEmployees.BackColor = Color.FromArgb(45, 45, 45);
             btnEmployees.Cursor = Cursors.Hand;
-            btnEmployees.FlatAppearance.BorderColor = Color.FromArgb(64, 168, 252);
+            btnEmployees.FlatAppearance.BorderSize = 0;
+            btnEmployees.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
             btnEmployees.FlatStyle = FlatStyle.Flat;
-            btnEmployees.Font = new Font("Segoe UI", 10F);
+            btnEmployees.Font = new Font("Segoe UI", 13F);
             btnEmployees.ForeColor = Color.White;
-            btnEmployees.Location = new Point(285, 250);
+            btnEmployees.Location = new Point(345, 300);
             btnEmployees.Name = "btnEmployees";
-            btnEmployees.Size = new Size(210, 50);
+            btnEmployees.Size = new Size(160, 120);
             btnEmployees.TabIndex = 7;
-            btnEmployees.Text = "Pracownicy";
+            btnEmployees.Text = "👥\r\n\r\nPracownicy";
             btnEmployees.UseVisualStyleBackColor = false;
             btnEmployees.Click += btnEmployees_Click;
             // 
@@ -149,24 +156,37 @@ namespace Cars4Us
             // 
             btnTransactions.BackColor = Color.FromArgb(45, 45, 45);
             btnTransactions.Cursor = Cursors.Hand;
-            btnTransactions.FlatAppearance.BorderColor = Color.FromArgb(64, 168, 252);
+            btnTransactions.FlatAppearance.BorderSize = 0;
+            btnTransactions.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
             btnTransactions.FlatStyle = FlatStyle.Flat;
-            btnTransactions.Font = new Font("Segoe UI", 10F);
+            btnTransactions.Font = new Font("Segoe UI", 13F);
             btnTransactions.ForeColor = Color.White;
-            btnTransactions.Location = new Point(170, 315);
+            btnTransactions.Location = new Point(525, 300);
             btnTransactions.Name = "btnTransactions";
-            btnTransactions.Size = new Size(210, 50);
+            btnTransactions.Size = new Size(160, 120);
             btnTransactions.TabIndex = 8;
-            btnTransactions.Text = "Transakcje";
+            btnTransactions.Text = "🧾\r\n\r\nTransakcje";
             btnTransactions.UseVisualStyleBackColor = false;
             btnTransactions.Click += btnTransactions_Click;
+            // 
+            // lblFooter
+            // 
+            lblFooter.Font = new Font("Segoe UI", 9F);
+            lblFooter.ForeColor = Color.FromArgb(120, 120, 120);
+            lblFooter.Location = new Point(0, 490);
+            lblFooter.Name = "lblFooter";
+            lblFooter.Size = new Size(850, 30);
+            lblFooter.TabIndex = 9;
+            lblFooter.Text = "Cars4Us • C# WinForms • MySQL";
+            lblFooter.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
-            ClientSize = new Size(550, 495);
+            ClientSize = new Size(850, 550);
+            Controls.Add(lblFooter);
             Controls.Add(btnTransactions);
             Controls.Add(btnEmployees);
             Controls.Add(btnOptions);
@@ -195,5 +215,6 @@ namespace Cars4Us
         private Label lblTitle;
         private Label lblSubtitle;
         private Button btnTransactions;
+        private Label lblFooter;
     }
 }

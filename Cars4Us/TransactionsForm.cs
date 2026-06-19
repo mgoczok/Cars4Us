@@ -19,6 +19,7 @@ namespace Cars4Us
         public TransactionsForm()
         {
             InitializeComponent();
+            dgvTransactions.CellFormatting += dgvTransactions_CellFormatting;
             LoadComboBoxData();
             LoadTransactions();
         }
@@ -79,9 +80,63 @@ namespace Cars4Us
         {
             try
             {
-                var transactions = _transactionRepo.GetAll();
+                DbConnection db = new DbConnection();
+                System.Data.DataTable table = new System.Data.DataTable();
+                using (var conn = db.GetConnection())
+                {
+                    conn.Open();
+                    string query = @"
+                        SELECT 
+                            t.Id,
+                            t.CarId,
+                            t.CustomerId,
+                            t.EmployeeId,
+                            CONCAT(c.Brand, ' ', c.Model) AS CarName,
+                            CONCAT(cu.FirstName, ' ', cu.LastName) AS CustomerName,
+                            CONCAT(e.FirstName, ' ', e.LastName) AS EmployeeName,
+                            t.FinalPrice,
+                            t.FinancingType,
+                            t.Status,
+                            t.TransactionDate
+                        FROM transactions t
+                        LEFT JOIN cars c ON t.CarId = c.Id
+                        LEFT JOIN customers cu ON t.CustomerId = cu.Id
+                        LEFT JOIN employees e ON t.EmployeeId = e.Id
+                        ORDER BY t.TransactionDate DESC";
+
+                    using (var cmd = new MySql.Data.MySqlClient.MySqlCommand(query, conn))
+                    using (var adapter = new MySql.Data.MySqlClient.MySqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(table);
+                    }
+                }
+
                 dgvTransactions.DataSource = null;
-                dgvTransactions.DataSource = transactions;
+                dgvTransactions.DataSource = table;
+
+                if (dgvTransactions.Columns["Id"] != null) dgvTransactions.Columns["Id"].HeaderText = "ID";
+                
+                if (dgvTransactions.Columns["CarId"] != null) dgvTransactions.Columns["CarId"].Visible = false;
+                if (dgvTransactions.Columns["CustomerId"] != null) dgvTransactions.Columns["CustomerId"].Visible = false;
+                if (dgvTransactions.Columns["EmployeeId"] != null) dgvTransactions.Columns["EmployeeId"].Visible = false;
+
+                if (dgvTransactions.Columns["CarName"] != null) dgvTransactions.Columns["CarName"].HeaderText = "Samochód";
+                if (dgvTransactions.Columns["CustomerName"] != null) dgvTransactions.Columns["CustomerName"].HeaderText = "Klient";
+                if (dgvTransactions.Columns["EmployeeName"] != null) dgvTransactions.Columns["EmployeeName"].HeaderText = "Handlowiec";
+
+                if (dgvTransactions.Columns["FinalPrice"] != null) 
+                {
+                    dgvTransactions.Columns["FinalPrice"].HeaderText = "Cena końcowa";
+                    dgvTransactions.Columns["FinalPrice"].DefaultCellStyle.Format = "C2";
+                    dgvTransactions.Columns["FinalPrice"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                }
+                if (dgvTransactions.Columns["FinancingType"] != null) dgvTransactions.Columns["FinancingType"].HeaderText = "Finansowanie";
+                if (dgvTransactions.Columns["Status"] != null) dgvTransactions.Columns["Status"].HeaderText = "Status";
+                if (dgvTransactions.Columns["TransactionDate"] != null) 
+                {
+                    dgvTransactions.Columns["TransactionDate"].HeaderText = "Data transakcji";
+                    dgvTransactions.Columns["TransactionDate"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm";
+                }
             }
             catch (Exception ex)
             {
@@ -303,6 +358,49 @@ namespace Cars4Us
             cbFinancingType.SelectedIndex = -1;
             cbStatus.SelectedIndex = -1;
             dgvTransactions.ClearSelection();
+        }
+
+        private void dgvTransactions_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.Value == null) return;
+
+            string colName = dgvTransactions.Columns[e.ColumnIndex].Name;
+
+            if (colName == "FinancingType")
+            {
+                string fType = e.Value.ToString() ?? "";
+                if (fType == "Cash") { e.Value = "Gotówka"; e.FormattingApplied = true; }
+                else if (fType == "Leasing") { e.Value = "Leasing"; e.FormattingApplied = true; }
+                else if (fType == "Credit") { e.Value = "Kredyt"; e.FormattingApplied = true; }
+            }
+            else if (colName == "Status")
+            {
+                string status = e.Value.ToString() ?? "";
+                
+                switch (status)
+                {
+                    case "Created": e.Value = "Utworzona"; break;
+                    case "Reserved": 
+                        e.Value = "Zarezerwowana"; 
+                        e.CellStyle.ForeColor = Color.LightBlue;
+                        break;
+                    case "CreditVerification": 
+                        e.Value = "Weryfikacja kredytowa"; 
+                        e.CellStyle.ForeColor = Color.Orange;
+                        break;
+                    case "Insurance": e.Value = "Ubezpieczenie"; break;
+                    case "ReadyForRelease": e.Value = "Gotowa do wydania"; break;
+                    case "Completed": 
+                        e.Value = "Zakończona"; 
+                        e.CellStyle.ForeColor = Color.LightGreen;
+                        break;
+                    case "Cancelled": 
+                        e.Value = "Anulowana"; 
+                        e.CellStyle.ForeColor = Color.LightCoral;
+                        break;
+                }
+                e.FormattingApplied = true;
+            }
         }
     }
 }

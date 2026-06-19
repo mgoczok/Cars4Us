@@ -20,7 +20,9 @@ namespace Cars4Us
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             lblHeader = new Label();
-            gbTransactionData = new GroupBox();
+            lblSubtitle = new Label();
+            pnlTransactionData = new Panel();
+            lblTransactionDataSection = new Label();
             lblCar = new Label();
             cbCar = new ComboBox();
             lblCustomer = new Label();
@@ -39,51 +41,71 @@ namespace Cars4Us
             btnRefresh = new Button();
             btnClear = new Button();
             dgvTransactions = new DataGridView();
-            gbTransactionData.SuspendLayout();
+            pnlTransactionData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numFinalPrice).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvTransactions).BeginInit();
             SuspendLayout();
             // 
             // lblHeader
             // 
-            lblHeader.AutoSize = true;
             lblHeader.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             lblHeader.ForeColor = Color.FromArgb(64, 168, 252);
-            lblHeader.Location = new Point(20, 15);
+            lblHeader.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
             lblHeader.Name = "lblHeader";
-            lblHeader.Size = new Size(136, 30);
+            lblHeader.AutoSize = false;
+            lblHeader.Size = new Size(800, 45);
+            lblHeader.Location = new Point(20, 15);
             lblHeader.TabIndex = 0;
             lblHeader.Text = "Transakcje";
             // 
-            // gbTransactionData
+            
+            // lblSubtitle
+            lblSubtitle.Font = new Font("Segoe UI", 12F);
+            lblSubtitle.ForeColor = Color.FromArgb(180, 180, 180);
+            lblSubtitle.Name = "lblSubtitle";
+            lblSubtitle.AutoSize = false;
+            lblSubtitle.Size = new Size(800, 30);
+            lblSubtitle.Location = new Point(20, 60);
+            lblSubtitle.TabIndex = 1;
+            lblSubtitle.Text = "Rejestr sprzedaży pojazdów";
+            // pnlTransactionData
             // 
-            gbTransactionData.Controls.Add(lblCar);
-            gbTransactionData.Controls.Add(cbCar);
-            gbTransactionData.Controls.Add(lblCustomer);
-            gbTransactionData.Controls.Add(cbCustomer);
-            gbTransactionData.Controls.Add(lblEmployee);
-            gbTransactionData.Controls.Add(cbEmployee);
-            gbTransactionData.Controls.Add(lblFinalPrice);
-            gbTransactionData.Controls.Add(numFinalPrice);
-            gbTransactionData.Controls.Add(lblFinancingType);
-            gbTransactionData.Controls.Add(cbFinancingType);
-            gbTransactionData.Controls.Add(lblStatus);
-            gbTransactionData.Controls.Add(cbStatus);
-            gbTransactionData.Controls.Add(btnAdd);
-            gbTransactionData.Controls.Add(btnUpdate);
-            gbTransactionData.Controls.Add(btnCancel);
-            gbTransactionData.ForeColor = Color.White;
-            gbTransactionData.Location = new Point(20, 55);
-            gbTransactionData.Name = "gbTransactionData";
-            gbTransactionData.Size = new Size(940, 210);
-            gbTransactionData.TabIndex = 1;
-            gbTransactionData.TabStop = false;
-            gbTransactionData.Text = "Dane transakcji";
-            // 
+            pnlTransactionData.Controls.Add(lblCar);
+            pnlTransactionData.Controls.Add(cbCar);
+            pnlTransactionData.Controls.Add(lblCustomer);
+            pnlTransactionData.Controls.Add(cbCustomer);
+            pnlTransactionData.Controls.Add(lblEmployee);
+            pnlTransactionData.Controls.Add(cbEmployee);
+            pnlTransactionData.Controls.Add(lblFinalPrice);
+            pnlTransactionData.Controls.Add(numFinalPrice);
+            pnlTransactionData.Controls.Add(lblFinancingType);
+            pnlTransactionData.Controls.Add(cbFinancingType);
+            pnlTransactionData.Controls.Add(lblStatus);
+            pnlTransactionData.Controls.Add(cbStatus);
+            pnlTransactionData.Controls.Add(btnAdd);
+            pnlTransactionData.Controls.Add(btnUpdate);
+            pnlTransactionData.Controls.Add(btnCancel);
+            pnlTransactionData.Controls.Add(btnRefresh);
+            pnlTransactionData.Controls.Add(btnClear);
+            pnlTransactionData.ForeColor = Color.White;
+            pnlTransactionData.Location = new Point(20, 100);
+            pnlTransactionData.BackColor = Color.FromArgb(40, 40, 40);
+            pnlTransactionData.Name = "gbTransactionData";
+            pnlTransactionData.Size = new Size(1040, 190);
+            pnlTransactionData.TabIndex = 1;
+            // lblTransactionDataSection
+            lblTransactionDataSection.AutoSize = true;
+            lblTransactionDataSection.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblTransactionDataSection.ForeColor = Color.FromArgb(64, 168, 252);
+            lblTransactionDataSection.Location = new Point(15, 15);
+            lblTransactionDataSection.Text = "Dane transakcji";
+            pnlTransactionData.Controls.Add(lblTransactionDataSection);
+
+                        // 
             // lblCar
             // 
             lblCar.AutoSize = true;
-            lblCar.Location = new Point(15, 30);
+            lblCar.Location = new Point(20, 55);
             lblCar.Name = "lblCar";
             lblCar.Size = new Size(69, 15);
             lblCar.TabIndex = 0;
@@ -95,15 +117,15 @@ namespace Cars4Us
             cbCar.DropDownStyle = ComboBoxStyle.DropDownList;
             cbCar.ForeColor = Color.White;
             cbCar.FormattingEnabled = true;
-            cbCar.Location = new Point(105, 27);
+            cbCar.Location = new Point(100, 52);
             cbCar.Name = "cbCar";
-            cbCar.Size = new Size(340, 23);
+            cbCar.Size = new Size(250, 23);
             cbCar.TabIndex = 1;
             // 
             // lblCustomer
             // 
             lblCustomer.AutoSize = true;
-            lblCustomer.Location = new Point(15, 65);
+            lblCustomer.Location = new Point(20, 95);
             lblCustomer.Name = "lblCustomer";
             lblCustomer.Size = new Size(42, 15);
             lblCustomer.TabIndex = 2;
@@ -115,15 +137,15 @@ namespace Cars4Us
             cbCustomer.DropDownStyle = ComboBoxStyle.DropDownList;
             cbCustomer.ForeColor = Color.White;
             cbCustomer.FormattingEnabled = true;
-            cbCustomer.Location = new Point(105, 62);
+            cbCustomer.Location = new Point(100, 92);
             cbCustomer.Name = "cbCustomer";
-            cbCustomer.Size = new Size(340, 23);
+            cbCustomer.Size = new Size(250, 23);
             cbCustomer.TabIndex = 3;
             // 
             // lblEmployee
             // 
             lblEmployee.AutoSize = true;
-            lblEmployee.Location = new Point(15, 100);
+            lblEmployee.Location = new Point(20, 135);
             lblEmployee.Name = "lblEmployee";
             lblEmployee.Size = new Size(71, 15);
             lblEmployee.TabIndex = 4;
@@ -135,15 +157,15 @@ namespace Cars4Us
             cbEmployee.DropDownStyle = ComboBoxStyle.DropDownList;
             cbEmployee.ForeColor = Color.White;
             cbEmployee.FormattingEnabled = true;
-            cbEmployee.Location = new Point(105, 97);
+            cbEmployee.Location = new Point(100, 132);
             cbEmployee.Name = "cbEmployee";
-            cbEmployee.Size = new Size(340, 23);
+            cbEmployee.Size = new Size(250, 23);
             cbEmployee.TabIndex = 5;
             // 
             // lblFinalPrice
             // 
             lblFinalPrice.AutoSize = true;
-            lblFinalPrice.Location = new Point(500, 30);
+            lblFinalPrice.Location = new Point(380, 55);
             lblFinalPrice.Name = "lblFinalPrice";
             lblFinalPrice.Size = new Size(93, 15);
             lblFinalPrice.TabIndex = 6;
@@ -154,17 +176,17 @@ namespace Cars4Us
             numFinalPrice.BackColor = Color.FromArgb(45, 45, 45);
             numFinalPrice.DecimalPlaces = 2;
             numFinalPrice.ForeColor = Color.White;
-            numFinalPrice.Location = new Point(620, 27);
+            numFinalPrice.Location = new Point(480, 52);
             numFinalPrice.Maximum = new decimal(new int[] { 99999999, 0, 0, 0 });
             numFinalPrice.Name = "numFinalPrice";
-            numFinalPrice.Size = new Size(290, 23);
+            numFinalPrice.Size = new Size(250, 23);
             numFinalPrice.TabIndex = 7;
             numFinalPrice.ThousandsSeparator = true;
             // 
             // lblFinancingType
             // 
             lblFinancingType.AutoSize = true;
-            lblFinancingType.Location = new Point(500, 65);
+            lblFinancingType.Location = new Point(380, 95);
             lblFinancingType.Name = "lblFinancingType";
             lblFinancingType.Size = new Size(86, 15);
             lblFinancingType.TabIndex = 8;
@@ -177,15 +199,15 @@ namespace Cars4Us
             cbFinancingType.ForeColor = Color.White;
             cbFinancingType.FormattingEnabled = true;
             cbFinancingType.Items.AddRange(new object[] { "Cash", "Leasing", "Credit" });
-            cbFinancingType.Location = new Point(620, 62);
+            cbFinancingType.Location = new Point(480, 92);
             cbFinancingType.Name = "cbFinancingType";
-            cbFinancingType.Size = new Size(290, 23);
+            cbFinancingType.Size = new Size(250, 23);
             cbFinancingType.TabIndex = 9;
             // 
             // lblStatus
             // 
             lblStatus.AutoSize = true;
-            lblStatus.Location = new Point(500, 100);
+            lblStatus.Location = new Point(380, 135);
             lblStatus.Name = "lblStatus";
             lblStatus.Size = new Size(42, 15);
             lblStatus.TabIndex = 10;
@@ -198,9 +220,9 @@ namespace Cars4Us
             cbStatus.ForeColor = Color.White;
             cbStatus.FormattingEnabled = true;
             cbStatus.Items.AddRange(new object[] { "Created", "Reserved", "CreditVerification", "Insurance", "ReadyForRelease", "Completed", "Cancelled" });
-            cbStatus.Location = new Point(620, 97);
+            cbStatus.Location = new Point(480, 132);
             cbStatus.Name = "cbStatus";
-            cbStatus.Size = new Size(290, 23);
+            cbStatus.Size = new Size(250, 23);
             cbStatus.TabIndex = 11;
             // 
             // btnAdd
@@ -211,9 +233,10 @@ namespace Cars4Us
             btnAdd.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(15, 140);
+            btnAdd.Location = new Point(780, 30);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(120, 35);
+            btnAdd.Size = new Size(110, 40);
+            btnAdd.Font = new Font("Segoe UI", 10F);
             btnAdd.TabIndex = 12;
             btnAdd.Text = "Dodaj";
             btnAdd.UseVisualStyleBackColor = false;
@@ -227,9 +250,10 @@ namespace Cars4Us
             btnUpdate.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
             btnUpdate.FlatStyle = FlatStyle.Flat;
             btnUpdate.ForeColor = Color.White;
-            btnUpdate.Location = new Point(150, 140);
+            btnUpdate.Location = new Point(900, 30);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(120, 35);
+            btnUpdate.Size = new Size(110, 40);
+            btnUpdate.Font = new Font("Segoe UI", 10F);
             btnUpdate.TabIndex = 13;
             btnUpdate.Text = "Zaktualizuj";
             btnUpdate.UseVisualStyleBackColor = false;
@@ -243,9 +267,13 @@ namespace Cars4Us
             btnCancel.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
             btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.ForeColor = Color.White;
-            btnCancel.Location = new Point(285, 140);
+            btnCancel.Location = new Point(780, 80);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(120, 35);
+            btnCancel.Size = new Size(230, 40);
+            btnCancel.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnCancel.BackColor = Color.FromArgb(160, 40, 40);
+            btnCancel.FlatAppearance.BorderColor = Color.FromArgb(255, 80, 80);
+            btnCancel.FlatAppearance.MouseOverBackColor = Color.FromArgb(200, 60, 60);
             btnCancel.TabIndex = 14;
             btnCancel.Text = "Anuluj transakcję";
             btnCancel.UseVisualStyleBackColor = false;
@@ -259,9 +287,10 @@ namespace Cars4Us
             btnRefresh.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
             btnRefresh.FlatStyle = FlatStyle.Flat;
             btnRefresh.ForeColor = Color.White;
-            btnRefresh.Location = new Point(780, 55);
+            btnRefresh.Location = new Point(780, 130);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(90, 30);
+            btnRefresh.Size = new Size(110, 40);
+            btnRefresh.Font = new Font("Segoe UI", 10F);
             btnRefresh.TabIndex = 2;
             btnRefresh.Text = "Odśwież";
             btnRefresh.UseVisualStyleBackColor = false;
@@ -275,9 +304,10 @@ namespace Cars4Us
             btnClear.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.ForeColor = Color.White;
-            btnClear.Location = new Point(880, 55);
+            btnClear.Location = new Point(900, 130);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(90, 30);
+            btnClear.Size = new Size(110, 40);
+            btnClear.Font = new Font("Segoe UI", 10F);
             btnClear.TabIndex = 3;
             btnClear.Text = "Wyczyść";
             btnClear.UseVisualStyleBackColor = false;
@@ -309,11 +339,14 @@ namespace Cars4Us
             dgvTransactions.DefaultCellStyle = dataGridViewCellStyle2;
             dgvTransactions.EnableHeadersVisualStyles = false;
             dgvTransactions.GridColor = Color.FromArgb(60, 60, 60);
-            dgvTransactions.Location = new Point(20, 280);
+            dgvTransactions.Location = new Point(20, 310);
             dgvTransactions.Name = "dgvTransactions";
             dgvTransactions.ReadOnly = true;
+            dgvTransactions.RowHeadersVisible = false;
             dgvTransactions.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvTransactions.Size = new Size(940, 310);
+            dgvTransactions.Size = new Size(1040, 360);
+            dgvTransactions.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvTransactions.RowTemplate.Height = 35;
             dgvTransactions.TabIndex = 4;
             dgvTransactions.CellClick += dgvTransactions_CellClick;
             // 
@@ -322,19 +355,18 @@ namespace Cars4Us
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
-            ClientSize = new Size(980, 605);
+            ClientSize = new Size(1100, 700);
             Controls.Add(dgvTransactions);
-            Controls.Add(btnClear);
-            Controls.Add(btnRefresh);
-            Controls.Add(gbTransactionData);
+            Controls.Add(pnlTransactionData);
+            Controls.Add(lblSubtitle);
             Controls.Add(lblHeader);
             Font = new Font("Segoe UI", 9F);
             ForeColor = Color.White;
             Name = "TransactionsForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cars4Us - Zarządzanie Transakcjami";
-            gbTransactionData.ResumeLayout(false);
-            gbTransactionData.PerformLayout();
+            pnlTransactionData.ResumeLayout(false);
+            pnlTransactionData.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numFinalPrice).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvTransactions).EndInit();
             ResumeLayout(false);
@@ -344,7 +376,9 @@ namespace Cars4Us
         #endregion
 
         private Label lblHeader;
-        private GroupBox gbTransactionData;
+        private Label lblSubtitle;
+        private Label lblTransactionDataSection;
+        private Panel pnlTransactionData;
         private Label lblCar;
         private ComboBox cbCar;
         private Label lblCustomer;

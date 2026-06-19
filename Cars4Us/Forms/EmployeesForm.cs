@@ -13,6 +13,7 @@ namespace Cars4Us
         public EmployeesForm()
         {
             InitializeComponent();
+            dgvEmployees.CellFormatting += dgvEmployees_CellFormatting;
             _repository = new EmployeeRepository();
             LoadEmployees();
         }
@@ -23,6 +24,21 @@ namespace Cars4Us
             {
                 var employees = _repository.GetAllActive();
                 dgvEmployees.DataSource = employees;
+
+                if (dgvEmployees.Columns["Id"] != null) dgvEmployees.Columns["Id"].HeaderText = "ID";
+                if (dgvEmployees.Columns["FirstName"] != null) dgvEmployees.Columns["FirstName"].HeaderText = "Imię";
+                if (dgvEmployees.Columns["LastName"] != null) dgvEmployees.Columns["LastName"].HeaderText = "Nazwisko";
+                if (dgvEmployees.Columns["Role"] != null) dgvEmployees.Columns["Role"].HeaderText = "Rola";
+                if (dgvEmployees.Columns["Email"] != null) 
+                {
+                    dgvEmployees.Columns["Email"].HeaderText = "Email";
+                }
+                if (dgvEmployees.Columns["Phone"] != null) dgvEmployees.Columns["Phone"].HeaderText = "Telefon";
+                if (dgvEmployees.Columns["IsActive"] != null) 
+                {
+                    dgvEmployees.Columns["IsActive"].Visible = false;
+                }
+
                 ClearSelection();
             }
             catch (Exception ex)
@@ -175,6 +191,20 @@ namespace Cars4Us
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearSelection();
+        }
+
+        private void dgvEmployees_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex >= 0 && dgvEmployees.Columns[e.ColumnIndex].Name == "Role" && e.Value != null)
+            {
+                string role = e.Value.ToString();
+                switch(role)
+                {
+                    case "Salesperson": e.Value = "Handlowiec"; e.FormattingApplied = true; break;
+                    case "Manager": e.Value = "Manager"; e.FormattingApplied = true; break;
+                    case "ServiceTechnician": e.Value = "Serwisant"; e.FormattingApplied = true; break;
+                }
+            }
         }
     }
 }

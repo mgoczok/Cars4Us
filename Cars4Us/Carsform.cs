@@ -14,6 +14,7 @@ namespace Cars4Us
         public CarsForm()
         {
             InitializeComponent();
+            dgvCars.CellFormatting += dgvCars_CellFormatting;
             LoadCars();
         }
 
@@ -57,7 +58,7 @@ namespace Cars4Us
                     VALUES
                     (@vin,@brand,@model,
                     @engine,@mileage,
-                    @price,'Available')";
+                    @price,@status)";
 
                     MySqlCommand cmd =
                         new MySqlCommand(query, conn);
@@ -68,6 +69,7 @@ namespace Cars4Us
                     cmd.Parameters.AddWithValue("@engine", cbEngine.Text.Trim());
                     cmd.Parameters.AddWithValue("@mileage", mileage);
                     cmd.Parameters.AddWithValue("@price", price);
+                    cmd.Parameters.AddWithValue("@status", string.IsNullOrWhiteSpace(cbStatus.Text) ? "Available" : cbStatus.Text.Trim());
 
                     cmd.ExecuteNonQuery();
 
@@ -103,6 +105,23 @@ namespace Cars4Us
                     adapter.Fill(table);
 
                     dgvCars.DataSource = table;
+
+                    if (dgvCars.Columns["Id"] != null) dgvCars.Columns["Id"].HeaderText = "ID";
+                    if (dgvCars.Columns["VIN"] != null) dgvCars.Columns["VIN"].HeaderText = "VIN";
+                    if (dgvCars.Columns["Brand"] != null) dgvCars.Columns["Brand"].HeaderText = "Marka";
+                    if (dgvCars.Columns["Model"] != null) dgvCars.Columns["Model"].HeaderText = "Model";
+                    if (dgvCars.Columns["EngineType"] != null) dgvCars.Columns["EngineType"].HeaderText = "Silnik";
+                    if (dgvCars.Columns["Mileage"] != null) 
+                    {
+                        dgvCars.Columns["Mileage"].HeaderText = "Przebieg";
+                        dgvCars.Columns["Mileage"].DefaultCellStyle.Format = "N0";
+                    }
+                    if (dgvCars.Columns["BasePrice"] != null) 
+                    {
+                        dgvCars.Columns["BasePrice"].HeaderText = "Cena bazowa";
+                        dgvCars.Columns["BasePrice"].DefaultCellStyle.Format = "C2";
+                    }
+                    if (dgvCars.Columns["Status"] != null) dgvCars.Columns["Status"].HeaderText = "Status";
                 }
             }
             catch (Exception ex)
@@ -114,6 +133,40 @@ namespace Cars4Us
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadCars();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtVin.Clear();
+            txtBrand.Clear();
+            txtModel.Clear();
+            txtMileage.Clear();
+            txtPrice.Clear();
+            cbEngine.SelectedIndex = -1;
+            if (cbStatus.Items.Count > 0) cbStatus.SelectedIndex = 0;
+        }
+
+        private void dgvCars_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex >= 0 && dgvCars.Columns[e.ColumnIndex].Name == "Status" && e.Value != null)
+            {
+                string status = e.Value.ToString();
+                if (status == "Available")
+                {
+                    e.Value = "Dostępny";
+                    e.FormattingApplied = true;
+                }
+                else if (status == "OnOrder")
+                {
+                    e.Value = "Na zamówienie";
+                    e.FormattingApplied = true;
+                }
+            }
         }
     }
 }

@@ -45,13 +45,13 @@ namespace Cars4Us
             // 
             // lblHeader
             // 
-            lblHeader.AutoSize = true;
             lblHeader.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             lblHeader.ForeColor = Color.FromArgb(64, 168, 252);
-            lblHeader.Location = new Point(20, 15);
             lblHeader.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
             lblHeader.Name = "lblHeader";
-            lblHeader.Size = new Size(130, 30);
+            lblHeader.AutoSize = false;
+            lblHeader.Size = new Size(800, 45);
+            lblHeader.Location = new Point(20, 15);
             lblHeader.TabIndex = 0;
             lblHeader.Text = "Pracownicy";
             // 
@@ -59,9 +59,10 @@ namespace Cars4Us
             // lblSubtitle
             lblSubtitle.Font = new Font("Segoe UI", 12F);
             lblSubtitle.ForeColor = Color.FromArgb(180, 180, 180);
-            lblSubtitle.Location = new Point(20, 50);
             lblSubtitle.Name = "lblSubtitle";
-            lblSubtitle.Size = new Size(500, 25);
+            lblSubtitle.AutoSize = false;
+            lblSubtitle.Size = new Size(800, 30);
+            lblSubtitle.Location = new Point(20, 60);
             lblSubtitle.TabIndex = 1;
             lblSubtitle.Text = "Zarządzanie kadrą salonu";
             // pnlEmployeeData
@@ -82,7 +83,7 @@ namespace Cars4Us
             pnlEmployeeData.Controls.Add(btnRefresh);
             pnlEmployeeData.Controls.Add(btnClear);
             pnlEmployeeData.ForeColor = Color.White;
-            pnlEmployeeData.Location = new Point(20, 80);
+            pnlEmployeeData.Location = new Point(20, 100);
             pnlEmployeeData.BackColor = Color.FromArgb(40, 40, 40);
             pnlEmployeeData.Name = "gbEmployeeData";
             pnlEmployeeData.Size = new Size(940, 180);
@@ -301,7 +302,7 @@ namespace Cars4Us
             dgvEmployees.DefaultCellStyle = dataGridViewCellStyle2;
             dgvEmployees.EnableHeadersVisualStyles = false;
             dgvEmployees.GridColor = Color.FromArgb(60, 60, 60);
-            dgvEmployees.Location = new Point(20, 280);
+            dgvEmployees.Location = new Point(20, 300);
             dgvEmployees.Name = "dgvEmployees";
             dgvEmployees.RowHeadersVisible = false;
             dgvEmployees.Size = new Size(940, 260);
@@ -316,7 +317,7 @@ namespace Cars4Us
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
-            ClientSize = new Size(1000, 580);
+            ClientSize = new Size(1000, 600);
             Controls.Add(dgvEmployees);
             Controls.Add(pnlEmployeeData);
             Controls.Add(lblSubtitle);

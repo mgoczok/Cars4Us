@@ -48,13 +48,13 @@ namespace Cars4Us
             // 
             // lblHeader
             // 
-            lblHeader.AutoSize = true;
             lblHeader.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             lblHeader.ForeColor = Color.FromArgb(64, 168, 252);
-            lblHeader.Location = new Point(20, 15);
             lblHeader.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
             lblHeader.Name = "lblHeader";
-            lblHeader.Size = new Size(136, 30);
+            lblHeader.AutoSize = false;
+            lblHeader.Size = new Size(800, 45);
+            lblHeader.Location = new Point(20, 15);
             lblHeader.TabIndex = 0;
             lblHeader.Text = "Transakcje";
             // 
@@ -62,9 +62,10 @@ namespace Cars4Us
             // lblSubtitle
             lblSubtitle.Font = new Font("Segoe UI", 12F);
             lblSubtitle.ForeColor = Color.FromArgb(180, 180, 180);
-            lblSubtitle.Location = new Point(20, 50);
             lblSubtitle.Name = "lblSubtitle";
-            lblSubtitle.Size = new Size(500, 25);
+            lblSubtitle.AutoSize = false;
+            lblSubtitle.Size = new Size(800, 30);
+            lblSubtitle.Location = new Point(20, 60);
             lblSubtitle.TabIndex = 1;
             lblSubtitle.Text = "Rejestr sprzedaży pojazdów";
             // pnlTransactionData
@@ -87,7 +88,7 @@ namespace Cars4Us
             pnlTransactionData.Controls.Add(btnRefresh);
             pnlTransactionData.Controls.Add(btnClear);
             pnlTransactionData.ForeColor = Color.White;
-            pnlTransactionData.Location = new Point(20, 80);
+            pnlTransactionData.Location = new Point(20, 100);
             pnlTransactionData.BackColor = Color.FromArgb(40, 40, 40);
             pnlTransactionData.Name = "gbTransactionData";
             pnlTransactionData.Size = new Size(1040, 190);
@@ -338,7 +339,7 @@ namespace Cars4Us
             dgvTransactions.DefaultCellStyle = dataGridViewCellStyle2;
             dgvTransactions.EnableHeadersVisualStyles = false;
             dgvTransactions.GridColor = Color.FromArgb(60, 60, 60);
-            dgvTransactions.Location = new Point(20, 290);
+            dgvTransactions.Location = new Point(20, 310);
             dgvTransactions.Name = "dgvTransactions";
             dgvTransactions.ReadOnly = true;
             dgvTransactions.RowHeadersVisible = false;
@@ -354,7 +355,7 @@ namespace Cars4Us
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
-            ClientSize = new Size(1100, 680);
+            ClientSize = new Size(1100, 700);
             Controls.Add(dgvTransactions);
             Controls.Add(pnlTransactionData);
             Controls.Add(lblSubtitle);

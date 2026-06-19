@@ -42,13 +42,13 @@ namespace Cars4Us
             // 
             // lblHeader
             // 
-            lblHeader.AutoSize = true;
             lblHeader.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             lblHeader.ForeColor = Color.FromArgb(64, 168, 252);
-            lblHeader.Location = new Point(20, 15);
             lblHeader.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
             lblHeader.Name = "lblHeader";
-            lblHeader.Size = new Size(198, 30);
+            lblHeader.AutoSize = false;
+            lblHeader.Size = new Size(800, 45);
+            lblHeader.Location = new Point(20, 15);
             lblHeader.TabIndex = 0;
             lblHeader.Text = "Opcje i akcesoria";
             // 
@@ -56,9 +56,10 @@ namespace Cars4Us
             // lblSubtitle
             lblSubtitle.Font = new Font("Segoe UI", 12F);
             lblSubtitle.ForeColor = Color.FromArgb(180, 180, 180);
-            lblSubtitle.Location = new Point(20, 50);
             lblSubtitle.Name = "lblSubtitle";
-            lblSubtitle.Size = new Size(500, 25);
+            lblSubtitle.AutoSize = false;
+            lblSubtitle.Size = new Size(800, 30);
+            lblSubtitle.Location = new Point(20, 60);
             lblSubtitle.TabIndex = 1;
             lblSubtitle.Text = "Zarządzanie katalogiem wyposażenia dodatkowego";
             // pnlOptionData
@@ -75,7 +76,7 @@ namespace Cars4Us
             pnlOptionData.Controls.Add(btnRefresh);
             pnlOptionData.Controls.Add(btnClear);
             pnlOptionData.ForeColor = Color.White;
-            pnlOptionData.Location = new Point(20, 80);
+            pnlOptionData.Location = new Point(20, 100);
             pnlOptionData.BackColor = Color.FromArgb(40, 40, 40);
             pnlOptionData.Name = "gbOptionData";
             pnlOptionData.Size = new Size(860, 160);
@@ -257,7 +258,7 @@ namespace Cars4Us
             dgvOptions.DefaultCellStyle = dataGridViewCellStyle2;
             dgvOptions.EnableHeadersVisualStyles = false;
             dgvOptions.GridColor = Color.FromArgb(60, 60, 60);
-            dgvOptions.Location = new Point(20, 260);
+            dgvOptions.Location = new Point(20, 280);
             dgvOptions.Name = "dgvOptions";
             dgvOptions.RowHeadersVisible = false;
             dgvOptions.Size = new Size(860, 270);
@@ -272,7 +273,7 @@ namespace Cars4Us
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
-            ClientSize = new Size(900, 550);
+            ClientSize = new Size(900, 570);
             Controls.Add(dgvOptions);
             Controls.Add(pnlOptionData);
             Controls.Add(lblSubtitle);

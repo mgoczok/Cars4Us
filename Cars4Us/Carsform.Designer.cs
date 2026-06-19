@@ -50,25 +50,25 @@ namespace Cars4Us
             // 
             label7.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             label7.ForeColor = Color.FromArgb(64, 168, 252);
-            label7.Location = new Point(0, 15);
             label7.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
             label7.Name = "label7";
-            label7.Size = new Size(1150, 42);
+            label7.AutoSize = false;
+            label7.Size = new Size(950, 50);
+            label7.Location = new Point(20, 15);
             label7.TabIndex = 0;
             label7.Text = "Cars4Us";
-            label7.TextAlign = ContentAlignment.MiddleCenter;
             label7.Click += label7_Click;
             // 
             
             // lblSubtitle
             lblSubtitle.Font = new Font("Segoe UI", 12F);
             lblSubtitle.ForeColor = Color.FromArgb(180, 180, 180);
-            lblSubtitle.Location = new Point(0, 50);
             lblSubtitle.Name = "lblSubtitle";
-            lblSubtitle.Size = new Size(1150, 25);
+            lblSubtitle.AutoSize = false;
+            lblSubtitle.Size = new Size(800, 30);
+            lblSubtitle.Location = new Point(20, 60);
             lblSubtitle.TabIndex = 1;
             lblSubtitle.Text = "Zarządzanie samochodami";
-            lblSubtitle.TextAlign = ContentAlignment.MiddleCenter;
             // gbCarData
             // 
             gbCarData.Controls.Add(label1);
@@ -90,7 +90,7 @@ namespace Cars4Us
             gbCarData.Controls.Add(btnAdd);
             gbCarData.Controls.Add(btnDelete);
             gbCarData.ForeColor = Color.White;
-            gbCarData.Location = new Point(20, 90);
+            gbCarData.Location = new Point(20, 100);
             gbCarData.Name = "gbCarData";
             gbCarData.Size = new Size(350, 430);
             gbCarData.TabIndex = 1;
@@ -318,7 +318,7 @@ namespace Cars4Us
             dgvCars.DefaultCellStyle = dataGridViewCellStyle2;
             dgvCars.EnableHeadersVisualStyles = false;
             dgvCars.GridColor = Color.FromArgb(60, 60, 60);
-            dgvCars.Location = new Point(390, 90);
+            dgvCars.Location = new Point(390, 100);
             dgvCars.Name = "dgvCars";
             dgvCars.RowHeadersVisible = false;
             dgvCars.Size = new Size(740, 430);
@@ -333,7 +333,7 @@ namespace Cars4Us
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
-            ClientSize = new Size(1150, 550);
+            ClientSize = new Size(1150, 570);
             Controls.Add(dgvCars);
             Controls.Add(gbCarData);
             Controls.Add(lblSubtitle);

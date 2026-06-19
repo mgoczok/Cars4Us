@@ -49,12 +49,12 @@ namespace Cars4Us
             // 
             // lblHeader
             // 
-            lblHeader.AutoSize = true;
             lblHeader.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             lblHeader.ForeColor = Color.FromArgb(64, 168, 252);
-            lblHeader.Location = new Point(20, 15);
             lblHeader.Name = "lblHeader";
-            lblHeader.Size = new Size(225, 30);
+            lblHeader.AutoSize = false;
+            lblHeader.Size = new Size(800, 45);
+            lblHeader.Location = new Point(20, 15);
             lblHeader.TabIndex = 0;
             lblHeader.Text = "Kalkulator wyceny";
             // 

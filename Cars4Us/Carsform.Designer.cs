@@ -262,6 +262,7 @@ namespace Cars4Us
             btnDelete.TabIndex = 13;
             btnDelete.Text = "Usuń";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             
             // 

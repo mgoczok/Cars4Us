@@ -84,6 +84,52 @@ namespace Cars4Us
             }
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvCars.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Wybierz samochód do usunięcia.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            int selectedId = Convert.ToInt32(dgvCars.SelectedRows[0].Cells["Id"].Value);
+
+            var confirmResult = MessageBox.Show("Czy na pewno chcesz usunąć ten samochód?", "Potwierdzenie", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirmResult == DialogResult.Yes)
+            {
+                try
+                {
+                    DbConnection db = new DbConnection();
+                    using (var conn = db.GetConnection())
+                    {
+                        conn.Open();
+                        string query = "DELETE FROM cars WHERE Id = @id";
+                        MySqlCommand cmd = new MySqlCommand(query, conn);
+                        cmd.Parameters.AddWithValue("@id", selectedId);
+                        cmd.ExecuteNonQuery();
+                        
+                        MessageBox.Show("Samochód usunięty.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    LoadCars();
+                }
+                catch (MySqlException ex)
+                {
+                    if (ex.Number == 1451)
+                    {
+                        MessageBox.Show("Ten samochód nie może zostać usunięty, ponieważ jest powiązany z innymi rekordami (np. transakcjami).", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Błąd bazy danych: {ex.Message}", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Błąd podczas usuwania auta: {ex.Message}", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
         private void LoadCars()
         {
             try

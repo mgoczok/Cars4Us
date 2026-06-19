@@ -80,14 +80,50 @@ namespace Cars4Us
         {
             try
             {
-                var transactions = _transactionRepo.GetAll();
+                DbConnection db = new DbConnection();
+                System.Data.DataTable table = new System.Data.DataTable();
+                using (var conn = db.GetConnection())
+                {
+                    conn.Open();
+                    string query = @"
+                        SELECT 
+                            t.Id,
+                            t.CarId,
+                            t.CustomerId,
+                            t.EmployeeId,
+                            CONCAT(c.Brand, ' ', c.Model) AS CarName,
+                            CONCAT(cu.FirstName, ' ', cu.LastName) AS CustomerName,
+                            CONCAT(e.FirstName, ' ', e.LastName) AS EmployeeName,
+                            t.FinalPrice,
+                            t.FinancingType,
+                            t.Status,
+                            t.TransactionDate
+                        FROM transactions t
+                        LEFT JOIN cars c ON t.CarId = c.Id
+                        LEFT JOIN customers cu ON t.CustomerId = cu.Id
+                        LEFT JOIN employees e ON t.EmployeeId = e.Id
+                        ORDER BY t.TransactionDate DESC";
+
+                    using (var cmd = new MySql.Data.MySqlClient.MySqlCommand(query, conn))
+                    using (var adapter = new MySql.Data.MySqlClient.MySqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(table);
+                    }
+                }
+
                 dgvTransactions.DataSource = null;
-                dgvTransactions.DataSource = transactions;
+                dgvTransactions.DataSource = table;
 
                 if (dgvTransactions.Columns["Id"] != null) dgvTransactions.Columns["Id"].HeaderText = "ID";
-                if (dgvTransactions.Columns["CarId"] != null) dgvTransactions.Columns["CarId"].HeaderText = "Samochód";
-                if (dgvTransactions.Columns["CustomerId"] != null) dgvTransactions.Columns["CustomerId"].HeaderText = "Klient";
-                if (dgvTransactions.Columns["EmployeeId"] != null) dgvTransactions.Columns["EmployeeId"].HeaderText = "Handlowiec";
+                
+                if (dgvTransactions.Columns["CarId"] != null) dgvTransactions.Columns["CarId"].Visible = false;
+                if (dgvTransactions.Columns["CustomerId"] != null) dgvTransactions.Columns["CustomerId"].Visible = false;
+                if (dgvTransactions.Columns["EmployeeId"] != null) dgvTransactions.Columns["EmployeeId"].Visible = false;
+
+                if (dgvTransactions.Columns["CarName"] != null) dgvTransactions.Columns["CarName"].HeaderText = "Samochód";
+                if (dgvTransactions.Columns["CustomerName"] != null) dgvTransactions.Columns["CustomerName"].HeaderText = "Klient";
+                if (dgvTransactions.Columns["EmployeeName"] != null) dgvTransactions.Columns["EmployeeName"].HeaderText = "Handlowiec";
+
                 if (dgvTransactions.Columns["FinalPrice"] != null) 
                 {
                     dgvTransactions.Columns["FinalPrice"].HeaderText = "Cena końcowa";

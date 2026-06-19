@@ -26,6 +26,7 @@ namespace Cars4Us
             btnPricing = new Button();
             btnOptions = new Button();
             btnEmployees = new Button();
+            btnTransactions = new Button();
             SuspendLayout();
             // 
             // lblTitle
@@ -144,12 +145,29 @@ namespace Cars4Us
             btnEmployees.UseVisualStyleBackColor = false;
             btnEmployees.Click += btnEmployees_Click;
             // 
+            // btnTransactions
+            // 
+            btnTransactions.BackColor = Color.FromArgb(45, 45, 45);
+            btnTransactions.Cursor = Cursors.Hand;
+            btnTransactions.FlatAppearance.BorderColor = Color.FromArgb(64, 168, 252);
+            btnTransactions.FlatStyle = FlatStyle.Flat;
+            btnTransactions.Font = new Font("Segoe UI", 10F);
+            btnTransactions.ForeColor = Color.White;
+            btnTransactions.Location = new Point(170, 315);
+            btnTransactions.Name = "btnTransactions";
+            btnTransactions.Size = new Size(210, 50);
+            btnTransactions.TabIndex = 8;
+            btnTransactions.Text = "Transakcje";
+            btnTransactions.UseVisualStyleBackColor = false;
+            btnTransactions.Click += btnTransactions_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
-            ClientSize = new Size(550, 430);
+            ClientSize = new Size(550, 495);
+            Controls.Add(btnTransactions);
             Controls.Add(btnEmployees);
             Controls.Add(btnOptions);
             Controls.Add(btnPricing);
@@ -176,5 +194,6 @@ namespace Cars4Us
         private Button btnEmployees;
         private Label lblTitle;
         private Label lblSubtitle;
+        private Button btnTransactions;
     }
 }

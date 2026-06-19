@@ -30,5 +30,11 @@ namespace Cars4Us
             PricingForm form = new PricingForm();
             form.ShowDialog();
         }
+
+        private void btnTransactions_Click(object sender, EventArgs e)
+        {
+            TransactionsForm form = new TransactionsForm();
+            form.ShowDialog();
+        }
     }
 }

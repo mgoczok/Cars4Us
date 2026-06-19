@@ -217,7 +217,13 @@ namespace Cars4Us
 
                 // Select car in combo (may not be in list if no longer Available)
                 int carIndex = _cars.FindIndex(c => c.Id == carId);
-                cbCar.SelectedIndex = carIndex >= 0 ? carIndex : -1;
+                if (carIndex == -1)
+                {
+                    _cars.Add(new Car { Id = carId, Brand = "Pojazd archiwalny", Model = "", VIN = "Niedostępny" });
+                    cbCar.Items.Add($"Pojazd archiwalny (Id: {carId})");
+                    carIndex = _cars.Count - 1;
+                }
+                cbCar.SelectedIndex = carIndex;
 
                 // Select customer
                 int customerIndex = _customers.FindIndex(c => c.Id == customerId);

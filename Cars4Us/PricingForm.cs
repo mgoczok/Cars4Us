@@ -66,7 +66,7 @@ namespace Cars4Us
 
                 foreach (var option in _options)
                 {
-                    clbOptions.Items.Add($"{option.Name} ({option.Category}) - {option.Price:N2} PLN");
+                    clbOptions.Items.Add($"{option.Name} — {option.Price:N2} PLN");
                 }
             }
             catch (Exception ex)
@@ -130,6 +130,7 @@ namespace Cars4Us
 
                 // Display results
                 txtBreakdown.Text = result.Breakdown.Replace("\n", Environment.NewLine);
+                lblFinalPrice.ForeColor = System.Drawing.Color.LimeGreen;
                 lblFinalPrice.Text = $"{result.FinalPrice:N2} PLN";
             }
             catch (Exception ex)

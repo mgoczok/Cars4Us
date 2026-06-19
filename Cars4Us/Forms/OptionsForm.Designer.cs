@@ -20,7 +20,9 @@ namespace Cars4Us
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             lblHeader = new Label();
-            gbOptionData = new GroupBox();
+            lblSubtitle = new Label();
+            pnlOptionData = new Panel();
+            lblOptionDataSection = new Label();
             lblName = new Label();
             txtName = new TextBox();
             lblCategory = new Label();
@@ -33,7 +35,7 @@ namespace Cars4Us
             btnRefresh = new Button();
             btnClear = new Button();
             dgvOptions = new DataGridView();
-            gbOptionData.SuspendLayout();
+            pnlOptionData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numPrice).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvOptions).BeginInit();
             SuspendLayout();
@@ -44,36 +46,53 @@ namespace Cars4Us
             lblHeader.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             lblHeader.ForeColor = Color.FromArgb(64, 168, 252);
             lblHeader.Location = new Point(20, 15);
+            lblHeader.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
             lblHeader.Name = "lblHeader";
             lblHeader.Size = new Size(198, 30);
             lblHeader.TabIndex = 0;
             lblHeader.Text = "Opcje i akcesoria";
             // 
-            // gbOptionData
+            
+            // lblSubtitle
+            lblSubtitle.Font = new Font("Segoe UI", 12F);
+            lblSubtitle.ForeColor = Color.FromArgb(180, 180, 180);
+            lblSubtitle.Location = new Point(20, 50);
+            lblSubtitle.Name = "lblSubtitle";
+            lblSubtitle.Size = new Size(500, 25);
+            lblSubtitle.TabIndex = 1;
+            lblSubtitle.Text = "Zarządzanie katalogiem wyposażenia dodatkowego";
+            // pnlOptionData
             // 
-            gbOptionData.Controls.Add(lblName);
-            gbOptionData.Controls.Add(txtName);
-            gbOptionData.Controls.Add(lblCategory);
-            gbOptionData.Controls.Add(cbCategory);
-            gbOptionData.Controls.Add(lblPrice);
-            gbOptionData.Controls.Add(numPrice);
-            gbOptionData.Controls.Add(btnAdd);
-            gbOptionData.Controls.Add(btnUpdate);
-            gbOptionData.Controls.Add(btnDeactivate);
-            gbOptionData.Controls.Add(btnRefresh);
-            gbOptionData.Controls.Add(btnClear);
-            gbOptionData.ForeColor = Color.White;
-            gbOptionData.Location = new Point(20, 50);
-            gbOptionData.Name = "gbOptionData";
-            gbOptionData.Size = new Size(540, 180);
-            gbOptionData.TabIndex = 1;
-            gbOptionData.TabStop = false;
-            gbOptionData.Text = "Dane opcji";
-            // 
+            pnlOptionData.Controls.Add(lblName);
+            pnlOptionData.Controls.Add(txtName);
+            pnlOptionData.Controls.Add(lblCategory);
+            pnlOptionData.Controls.Add(cbCategory);
+            pnlOptionData.Controls.Add(lblPrice);
+            pnlOptionData.Controls.Add(numPrice);
+            pnlOptionData.Controls.Add(btnAdd);
+            pnlOptionData.Controls.Add(btnUpdate);
+            pnlOptionData.Controls.Add(btnDeactivate);
+            pnlOptionData.Controls.Add(btnRefresh);
+            pnlOptionData.Controls.Add(btnClear);
+            pnlOptionData.ForeColor = Color.White;
+            pnlOptionData.Location = new Point(20, 80);
+            pnlOptionData.BackColor = Color.FromArgb(40, 40, 40);
+            pnlOptionData.Name = "gbOptionData";
+            pnlOptionData.Size = new Size(860, 160);
+            pnlOptionData.TabIndex = 1;
+            // lblOptionDataSection
+            lblOptionDataSection.AutoSize = true;
+            lblOptionDataSection.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblOptionDataSection.ForeColor = Color.FromArgb(64, 168, 252);
+            lblOptionDataSection.Location = new Point(15, 10);
+            lblOptionDataSection.Text = "Dane opcji";
+            pnlOptionData.Controls.Add(lblOptionDataSection);
+
+                        // 
             // lblName
             // 
             lblName.AutoSize = true;
-            lblName.Location = new Point(15, 30);
+            lblName.Location = new Point(20, 45);
             lblName.Name = "lblName";
             lblName.Size = new Size(45, 15);
             lblName.TabIndex = 0;
@@ -84,15 +103,15 @@ namespace Cars4Us
             txtName.BackColor = Color.FromArgb(45, 45, 45);
             txtName.BorderStyle = BorderStyle.FixedSingle;
             txtName.ForeColor = Color.White;
-            txtName.Location = new Point(90, 28);
+            txtName.Location = new Point(100, 42);
             txtName.Name = "txtName";
-            txtName.Size = new Size(240, 23);
+            txtName.Size = new Size(250, 23);
             txtName.TabIndex = 1;
             // 
             // lblCategory
             // 
             lblCategory.AutoSize = true;
-            lblCategory.Location = new Point(15, 65);
+            lblCategory.Location = new Point(20, 85);
             lblCategory.Name = "lblCategory";
             lblCategory.Size = new Size(60, 15);
             lblCategory.TabIndex = 2;
@@ -105,15 +124,15 @@ namespace Cars4Us
             cbCategory.ForeColor = Color.White;
             cbCategory.FormattingEnabled = true;
             cbCategory.Items.AddRange(new object[] { "SafetyPackage", "Multimedia", "Wheels", "Comfort", "Warranty", "ExteriorProtection" });
-            cbCategory.Location = new Point(90, 62);
+            cbCategory.Location = new Point(100, 82);
             cbCategory.Name = "cbCategory";
-            cbCategory.Size = new Size(240, 23);
+            cbCategory.Size = new Size(250, 23);
             cbCategory.TabIndex = 3;
             // 
             // lblPrice
             // 
             lblPrice.AutoSize = true;
-            lblPrice.Location = new Point(15, 100);
+            lblPrice.Location = new Point(20, 125);
             lblPrice.Name = "lblPrice";
             lblPrice.Size = new Size(35, 15);
             lblPrice.TabIndex = 4;
@@ -124,10 +143,10 @@ namespace Cars4Us
             numPrice.BackColor = Color.FromArgb(45, 45, 45);
             numPrice.DecimalPlaces = 2;
             numPrice.ForeColor = Color.White;
-            numPrice.Location = new Point(90, 98);
+            numPrice.Location = new Point(100, 122);
             numPrice.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
             numPrice.Name = "numPrice";
-            numPrice.Size = new Size(240, 23);
+            numPrice.Size = new Size(250, 23);
             numPrice.TabIndex = 5;
             // 
             // btnAdd
@@ -138,9 +157,10 @@ namespace Cars4Us
             btnAdd.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(15, 140);
+            btnAdd.Location = new Point(400, 35);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(95, 30);
+            btnAdd.Size = new Size(130, 40);
+            btnAdd.Font = new Font("Segoe UI", 10F);
             btnAdd.TabIndex = 6;
             btnAdd.Text = "Dodaj";
             btnAdd.UseVisualStyleBackColor = false;
@@ -154,9 +174,10 @@ namespace Cars4Us
             btnUpdate.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
             btnUpdate.FlatStyle = FlatStyle.Flat;
             btnUpdate.ForeColor = Color.White;
-            btnUpdate.Location = new Point(120, 140);
+            btnUpdate.Location = new Point(550, 35);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(95, 30);
+            btnUpdate.Size = new Size(130, 40);
+            btnUpdate.Font = new Font("Segoe UI", 10F);
             btnUpdate.TabIndex = 7;
             btnUpdate.Text = "Zaktualizuj";
             btnUpdate.UseVisualStyleBackColor = false;
@@ -170,9 +191,10 @@ namespace Cars4Us
             btnDeactivate.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
             btnDeactivate.FlatStyle = FlatStyle.Flat;
             btnDeactivate.ForeColor = Color.White;
-            btnDeactivate.Location = new Point(225, 140);
+            btnDeactivate.Location = new Point(700, 35);
             btnDeactivate.Name = "btnDeactivate";
-            btnDeactivate.Size = new Size(105, 30);
+            btnDeactivate.Size = new Size(130, 40);
+            btnDeactivate.Font = new Font("Segoe UI", 10F);
             btnDeactivate.TabIndex = 8;
             btnDeactivate.Text = "Dezaktywuj";
             btnDeactivate.UseVisualStyleBackColor = false;
@@ -186,9 +208,10 @@ namespace Cars4Us
             btnRefresh.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
             btnRefresh.FlatStyle = FlatStyle.Flat;
             btnRefresh.ForeColor = Color.White;
-            btnRefresh.Location = new Point(335, 140);
+            btnRefresh.Location = new Point(400, 95);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(90, 30);
+            btnRefresh.Size = new Size(130, 40);
+            btnRefresh.Font = new Font("Segoe UI", 10F);
             btnRefresh.TabIndex = 2;
             btnRefresh.Text = "Odśwież";
             btnRefresh.UseVisualStyleBackColor = false;
@@ -202,9 +225,10 @@ namespace Cars4Us
             btnClear.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.ForeColor = Color.White;
-            btnClear.Location = new Point(430, 140);
+            btnClear.Location = new Point(550, 95);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(90, 30);
+            btnClear.Size = new Size(130, 40);
+            btnClear.Font = new Font("Segoe UI", 10F);
             btnClear.TabIndex = 3;
             btnClear.Text = "Wyczyść";
             btnClear.UseVisualStyleBackColor = false;
@@ -233,10 +257,12 @@ namespace Cars4Us
             dgvOptions.DefaultCellStyle = dataGridViewCellStyle2;
             dgvOptions.EnableHeadersVisualStyles = false;
             dgvOptions.GridColor = Color.FromArgb(60, 60, 60);
-            dgvOptions.Location = new Point(20, 245);
+            dgvOptions.Location = new Point(20, 260);
             dgvOptions.Name = "dgvOptions";
             dgvOptions.RowHeadersVisible = false;
-            dgvOptions.Size = new Size(810, 270);
+            dgvOptions.Size = new Size(860, 270);
+            dgvOptions.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvOptions.RowTemplate.Height = 35;
             dgvOptions.TabIndex = 4;
             dgvOptions.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvOptions.CellClick += dgvOptions_CellClick;
@@ -246,17 +272,18 @@ namespace Cars4Us
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
-            ClientSize = new Size(850, 530);
+            ClientSize = new Size(900, 550);
             Controls.Add(dgvOptions);
-            Controls.Add(gbOptionData);
+            Controls.Add(pnlOptionData);
+            Controls.Add(lblSubtitle);
             Controls.Add(lblHeader);
             Font = new Font("Segoe UI", 9F);
             ForeColor = Color.White;
             Name = "OptionsForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cars4Us - Zarządzanie Opcjami";
-            gbOptionData.ResumeLayout(false);
-            gbOptionData.PerformLayout();
+            pnlOptionData.ResumeLayout(false);
+            pnlOptionData.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numPrice).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvOptions).EndInit();
             ResumeLayout(false);
@@ -266,7 +293,9 @@ namespace Cars4Us
         #endregion
 
         private Label lblHeader;
-        private GroupBox gbOptionData;
+        private Label lblSubtitle;
+        private Label lblOptionDataSection;
+        private Panel pnlOptionData;
         private Label lblName;
         private TextBox txtName;
         private Label lblCategory;

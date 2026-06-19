@@ -13,6 +13,7 @@ namespace Cars4Us
         public OptionsForm()
         {
             InitializeComponent();
+            dgvOptions.CellFormatting += dgvOptions_CellFormatting;
             _repository = new OptionRepository();
             LoadOptions();
         }
@@ -32,7 +33,10 @@ namespace Cars4Us
                     dgvOptions.Columns["Price"].HeaderText = "Cena";
                     dgvOptions.Columns["Price"].DefaultCellStyle.Format = "C2";
                 }
-                if (dgvOptions.Columns["IsActive"] != null) dgvOptions.Columns["IsActive"].HeaderText = "Aktywna";
+                if (dgvOptions.Columns["IsActive"] != null) 
+                {
+                    dgvOptions.Columns["IsActive"].Visible = false;
+                }
                 ClearSelection();
             }
             catch (Exception ex)
@@ -170,6 +174,23 @@ namespace Cars4Us
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearSelection();
+        }
+
+        private void dgvOptions_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex >= 0 && dgvOptions.Columns[e.ColumnIndex].Name == "Category" && e.Value != null)
+            {
+                string cat = e.Value.ToString();
+                switch(cat)
+                {
+                    case "SafetyPackage": e.Value = "Pakiet bezpieczeństwa"; e.FormattingApplied = true; break;
+                    case "Multimedia": e.Value = "Multimedia"; e.FormattingApplied = true; break;
+                    case "Wheels": e.Value = "Felgi"; e.FormattingApplied = true; break;
+                    case "Comfort": e.Value = "Komfort"; e.FormattingApplied = true; break;
+                    case "Warranty": e.Value = "Gwarancja"; e.FormattingApplied = true; break;
+                    case "ExteriorProtection": e.Value = "Ochrona zewnętrzna"; e.FormattingApplied = true; break;
+                }
+            }
         }
     }
 }

@@ -19,6 +19,7 @@ namespace Cars4Us
         public TransactionsForm()
         {
             InitializeComponent();
+            dgvTransactions.CellFormatting += dgvTransactions_CellFormatting;
             LoadComboBoxData();
             LoadTransactions();
         }
@@ -91,10 +92,15 @@ namespace Cars4Us
                 {
                     dgvTransactions.Columns["FinalPrice"].HeaderText = "Cena końcowa";
                     dgvTransactions.Columns["FinalPrice"].DefaultCellStyle.Format = "C2";
+                    dgvTransactions.Columns["FinalPrice"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 }
                 if (dgvTransactions.Columns["FinancingType"] != null) dgvTransactions.Columns["FinancingType"].HeaderText = "Finansowanie";
                 if (dgvTransactions.Columns["Status"] != null) dgvTransactions.Columns["Status"].HeaderText = "Status";
-                if (dgvTransactions.Columns["TransactionDate"] != null) dgvTransactions.Columns["TransactionDate"].HeaderText = "Data transakcji";
+                if (dgvTransactions.Columns["TransactionDate"] != null) 
+                {
+                    dgvTransactions.Columns["TransactionDate"].HeaderText = "Data transakcji";
+                    dgvTransactions.Columns["TransactionDate"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm";
+                }
             }
             catch (Exception ex)
             {
@@ -316,6 +322,49 @@ namespace Cars4Us
             cbFinancingType.SelectedIndex = -1;
             cbStatus.SelectedIndex = -1;
             dgvTransactions.ClearSelection();
+        }
+
+        private void dgvTransactions_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.Value == null) return;
+
+            string colName = dgvTransactions.Columns[e.ColumnIndex].Name;
+
+            if (colName == "FinancingType")
+            {
+                string fType = e.Value.ToString() ?? "";
+                if (fType == "Cash") { e.Value = "Gotówka"; e.FormattingApplied = true; }
+                else if (fType == "Leasing") { e.Value = "Leasing"; e.FormattingApplied = true; }
+                else if (fType == "Credit") { e.Value = "Kredyt"; e.FormattingApplied = true; }
+            }
+            else if (colName == "Status")
+            {
+                string status = e.Value.ToString() ?? "";
+                
+                switch (status)
+                {
+                    case "Created": e.Value = "Utworzona"; break;
+                    case "Reserved": 
+                        e.Value = "Zarezerwowana"; 
+                        e.CellStyle.ForeColor = Color.LightBlue;
+                        break;
+                    case "CreditVerification": 
+                        e.Value = "Weryfikacja kredytowa"; 
+                        e.CellStyle.ForeColor = Color.Orange;
+                        break;
+                    case "Insurance": e.Value = "Ubezpieczenie"; break;
+                    case "ReadyForRelease": e.Value = "Gotowa do wydania"; break;
+                    case "Completed": 
+                        e.Value = "Zakończona"; 
+                        e.CellStyle.ForeColor = Color.LightGreen;
+                        break;
+                    case "Cancelled": 
+                        e.Value = "Anulowana"; 
+                        e.CellStyle.ForeColor = Color.LightCoral;
+                        break;
+                }
+                e.FormattingApplied = true;
+            }
         }
     }
 }

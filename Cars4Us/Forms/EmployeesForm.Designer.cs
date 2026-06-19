@@ -72,7 +72,7 @@ namespace Cars4Us
             gbEmployeeData.ForeColor = Color.White;
             gbEmployeeData.Location = new Point(20, 50);
             gbEmployeeData.Name = "gbEmployeeData";
-            gbEmployeeData.Size = new Size(740, 170);
+            gbEmployeeData.Size = new Size(910, 170);
             gbEmployeeData.TabIndex = 1;
             gbEmployeeData.TabStop = false;
             gbEmployeeData.Text = "Dane pracownika";
@@ -279,7 +279,8 @@ namespace Cars4Us
             dgvEmployees.GridColor = Color.FromArgb(60, 60, 60);
             dgvEmployees.Location = new Point(20, 235);
             dgvEmployees.Name = "dgvEmployees";
-            dgvEmployees.Size = new Size(740, 305);
+            dgvEmployees.RowHeadersVisible = false;
+            dgvEmployees.Size = new Size(910, 305);
             dgvEmployees.TabIndex = 2;
             dgvEmployees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvEmployees.CellClick += dgvEmployees_CellClick;
@@ -289,7 +290,7 @@ namespace Cars4Us
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
-            ClientSize = new Size(780, 560);
+            ClientSize = new Size(950, 560);
             Controls.Add(dgvEmployees);
             Controls.Add(gbEmployeeData);
             Controls.Add(lblHeader);

@@ -82,6 +82,19 @@ namespace Cars4Us
                 var transactions = _transactionRepo.GetAll();
                 dgvTransactions.DataSource = null;
                 dgvTransactions.DataSource = transactions;
+
+                if (dgvTransactions.Columns["Id"] != null) dgvTransactions.Columns["Id"].HeaderText = "ID";
+                if (dgvTransactions.Columns["CarId"] != null) dgvTransactions.Columns["CarId"].HeaderText = "Samochód";
+                if (dgvTransactions.Columns["CustomerId"] != null) dgvTransactions.Columns["CustomerId"].HeaderText = "Klient";
+                if (dgvTransactions.Columns["EmployeeId"] != null) dgvTransactions.Columns["EmployeeId"].HeaderText = "Handlowiec";
+                if (dgvTransactions.Columns["FinalPrice"] != null) 
+                {
+                    dgvTransactions.Columns["FinalPrice"].HeaderText = "Cena końcowa";
+                    dgvTransactions.Columns["FinalPrice"].DefaultCellStyle.Format = "C2";
+                }
+                if (dgvTransactions.Columns["FinancingType"] != null) dgvTransactions.Columns["FinancingType"].HeaderText = "Finansowanie";
+                if (dgvTransactions.Columns["Status"] != null) dgvTransactions.Columns["Status"].HeaderText = "Status";
+                if (dgvTransactions.Columns["TransactionDate"] != null) dgvTransactions.Columns["TransactionDate"].HeaderText = "Data transakcji";
             }
             catch (Exception ex)
             {

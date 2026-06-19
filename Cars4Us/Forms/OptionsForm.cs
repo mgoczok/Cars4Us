@@ -23,6 +23,16 @@ namespace Cars4Us
             {
                 var options = _repository.GetAllActive();
                 dgvOptions.DataSource = options;
+
+                if (dgvOptions.Columns["Id"] != null) dgvOptions.Columns["Id"].HeaderText = "ID";
+                if (dgvOptions.Columns["Name"] != null) dgvOptions.Columns["Name"].HeaderText = "Nazwa";
+                if (dgvOptions.Columns["Category"] != null) dgvOptions.Columns["Category"].HeaderText = "Kategoria";
+                if (dgvOptions.Columns["Price"] != null) 
+                {
+                    dgvOptions.Columns["Price"].HeaderText = "Cena";
+                    dgvOptions.Columns["Price"].DefaultCellStyle.Format = "C2";
+                }
+                if (dgvOptions.Columns["IsActive"] != null) dgvOptions.Columns["IsActive"].HeaderText = "Aktywna";
                 ClearSelection();
             }
             catch (Exception ex)

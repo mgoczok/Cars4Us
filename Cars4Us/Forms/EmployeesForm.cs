@@ -23,6 +23,18 @@ namespace Cars4Us
             {
                 var employees = _repository.GetAllActive();
                 dgvEmployees.DataSource = employees;
+
+                if (dgvEmployees.Columns["Id"] != null) dgvEmployees.Columns["Id"].HeaderText = "ID";
+                if (dgvEmployees.Columns["FirstName"] != null) dgvEmployees.Columns["FirstName"].HeaderText = "Imię";
+                if (dgvEmployees.Columns["LastName"] != null) dgvEmployees.Columns["LastName"].HeaderText = "Nazwisko";
+                if (dgvEmployees.Columns["Role"] != null) dgvEmployees.Columns["Role"].HeaderText = "Rola";
+                if (dgvEmployees.Columns["Email"] != null) 
+                {
+                    dgvEmployees.Columns["Email"].HeaderText = "Email";
+                }
+                if (dgvEmployees.Columns["Phone"] != null) dgvEmployees.Columns["Phone"].HeaderText = "Telefon";
+                if (dgvEmployees.Columns["IsActive"] != null) dgvEmployees.Columns["IsActive"].HeaderText = "Aktywny";
+
                 ClearSelection();
             }
             catch (Exception ex)

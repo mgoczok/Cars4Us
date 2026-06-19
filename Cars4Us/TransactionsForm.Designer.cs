@@ -72,6 +72,8 @@ namespace Cars4Us
             gbTransactionData.Controls.Add(btnAdd);
             gbTransactionData.Controls.Add(btnUpdate);
             gbTransactionData.Controls.Add(btnCancel);
+            gbTransactionData.Controls.Add(btnRefresh);
+            gbTransactionData.Controls.Add(btnClear);
             gbTransactionData.ForeColor = Color.White;
             gbTransactionData.Location = new Point(20, 55);
             gbTransactionData.Name = "gbTransactionData";
@@ -259,7 +261,7 @@ namespace Cars4Us
             btnRefresh.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
             btnRefresh.FlatStyle = FlatStyle.Flat;
             btnRefresh.ForeColor = Color.White;
-            btnRefresh.Location = new Point(780, 55);
+            btnRefresh.Location = new Point(730, 140);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(90, 30);
             btnRefresh.TabIndex = 2;
@@ -275,7 +277,7 @@ namespace Cars4Us
             btnClear.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.ForeColor = Color.White;
-            btnClear.Location = new Point(880, 55);
+            btnClear.Location = new Point(835, 140);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(90, 30);
             btnClear.TabIndex = 3;
@@ -312,6 +314,7 @@ namespace Cars4Us
             dgvTransactions.Location = new Point(20, 280);
             dgvTransactions.Name = "dgvTransactions";
             dgvTransactions.ReadOnly = true;
+            dgvTransactions.RowHeadersVisible = false;
             dgvTransactions.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvTransactions.Size = new Size(940, 310);
             dgvTransactions.TabIndex = 4;
@@ -324,8 +327,6 @@ namespace Cars4Us
             BackColor = Color.FromArgb(30, 30, 30);
             ClientSize = new Size(980, 605);
             Controls.Add(dgvTransactions);
-            Controls.Add(btnClear);
-            Controls.Add(btnRefresh);
             Controls.Add(gbTransactionData);
             Controls.Add(lblHeader);
             Font = new Font("Segoe UI", 9F);

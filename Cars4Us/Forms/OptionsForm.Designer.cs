@@ -60,10 +60,12 @@ namespace Cars4Us
             gbOptionData.Controls.Add(btnAdd);
             gbOptionData.Controls.Add(btnUpdate);
             gbOptionData.Controls.Add(btnDeactivate);
+            gbOptionData.Controls.Add(btnRefresh);
+            gbOptionData.Controls.Add(btnClear);
             gbOptionData.ForeColor = Color.White;
             gbOptionData.Location = new Point(20, 50);
             gbOptionData.Name = "gbOptionData";
-            gbOptionData.Size = new Size(350, 180);
+            gbOptionData.Size = new Size(540, 180);
             gbOptionData.TabIndex = 1;
             gbOptionData.TabStop = false;
             gbOptionData.Text = "Dane opcji";
@@ -184,7 +186,7 @@ namespace Cars4Us
             btnRefresh.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
             btnRefresh.FlatStyle = FlatStyle.Flat;
             btnRefresh.ForeColor = Color.White;
-            btnRefresh.Location = new Point(400, 55);
+            btnRefresh.Location = new Point(335, 140);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(90, 30);
             btnRefresh.TabIndex = 2;
@@ -200,7 +202,7 @@ namespace Cars4Us
             btnClear.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 168, 252);
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.ForeColor = Color.White;
-            btnClear.Location = new Point(500, 55);
+            btnClear.Location = new Point(430, 140);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(90, 30);
             btnClear.TabIndex = 3;
@@ -233,7 +235,8 @@ namespace Cars4Us
             dgvOptions.GridColor = Color.FromArgb(60, 60, 60);
             dgvOptions.Location = new Point(20, 245);
             dgvOptions.Name = "dgvOptions";
-            dgvOptions.Size = new Size(710, 270);
+            dgvOptions.RowHeadersVisible = false;
+            dgvOptions.Size = new Size(810, 270);
             dgvOptions.TabIndex = 4;
             dgvOptions.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvOptions.CellClick += dgvOptions_CellClick;
@@ -243,10 +246,8 @@ namespace Cars4Us
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
-            ClientSize = new Size(750, 530);
+            ClientSize = new Size(850, 530);
             Controls.Add(dgvOptions);
-            Controls.Add(btnClear);
-            Controls.Add(btnRefresh);
             Controls.Add(gbOptionData);
             Controls.Add(lblHeader);
             Font = new Font("Segoe UI", 9F);

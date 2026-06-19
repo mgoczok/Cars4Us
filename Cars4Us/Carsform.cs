@@ -103,6 +103,19 @@ namespace Cars4Us
                     adapter.Fill(table);
 
                     dgvCars.DataSource = table;
+
+                    if (dgvCars.Columns["Id"] != null) dgvCars.Columns["Id"].HeaderText = "ID";
+                    if (dgvCars.Columns["VIN"] != null) dgvCars.Columns["VIN"].HeaderText = "VIN";
+                    if (dgvCars.Columns["Brand"] != null) dgvCars.Columns["Brand"].HeaderText = "Marka";
+                    if (dgvCars.Columns["Model"] != null) dgvCars.Columns["Model"].HeaderText = "Model";
+                    if (dgvCars.Columns["EngineType"] != null) dgvCars.Columns["EngineType"].HeaderText = "Silnik";
+                    if (dgvCars.Columns["Mileage"] != null) dgvCars.Columns["Mileage"].HeaderText = "Przebieg";
+                    if (dgvCars.Columns["BasePrice"] != null) 
+                    {
+                        dgvCars.Columns["BasePrice"].HeaderText = "Cena bazowa";
+                        dgvCars.Columns["BasePrice"].DefaultCellStyle.Format = "C2";
+                    }
+                    if (dgvCars.Columns["Status"] != null) dgvCars.Columns["Status"].HeaderText = "Status";
                 }
             }
             catch (Exception ex)

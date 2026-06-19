@@ -47,7 +47,7 @@ namespace Cars4Us
             label7.ForeColor = Color.FromArgb(64, 168, 252);
             label7.Location = new Point(0, 15);
             label7.Name = "label7";
-            label7.Size = new Size(950, 42);
+            label7.Size = new Size(1150, 42);
             label7.TabIndex = 0;
             label7.Text = "Cars4Us";
             label7.TextAlign = ContentAlignment.MiddleCenter;
@@ -247,7 +247,8 @@ namespace Cars4Us
             dgvCars.GridColor = Color.FromArgb(60, 60, 60);
             dgvCars.Location = new Point(390, 70);
             dgvCars.Name = "dgvCars";
-            dgvCars.Size = new Size(540, 420);
+            dgvCars.RowHeadersVisible = false;
+            dgvCars.Size = new Size(740, 420);
             dgvCars.TabIndex = 2;
             // 
             // CarsForm
@@ -255,7 +256,7 @@ namespace Cars4Us
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
-            ClientSize = new Size(950, 550);
+            ClientSize = new Size(1150, 550);
             Controls.Add(dgvCars);
             Controls.Add(gbCarData);
             Controls.Add(label7);

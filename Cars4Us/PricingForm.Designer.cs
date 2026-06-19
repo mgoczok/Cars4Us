@@ -262,8 +262,8 @@ namespace Cars4Us
             // lblFinalPrice
             // 
             lblFinalPrice.AutoSize = true;
-            lblFinalPrice.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            lblFinalPrice.ForeColor = Color.FromArgb(50, 205, 50);
+            lblFinalPrice.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            lblFinalPrice.ForeColor = Color.LimeGreen;
             lblFinalPrice.Location = new Point(145, 205);
             lblFinalPrice.Name = "lblFinalPrice";
             lblFinalPrice.Size = new Size(106, 30);

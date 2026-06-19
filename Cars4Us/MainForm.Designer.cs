@@ -153,9 +153,9 @@ namespace Cars4Us
             btnTransactions.FlatStyle = FlatStyle.Flat;
             btnTransactions.Font = new Font("Segoe UI", 10F);
             btnTransactions.ForeColor = Color.White;
-            btnTransactions.Location = new Point(170, 315);
+            btnTransactions.Location = new Point(55, 315);
             btnTransactions.Name = "btnTransactions";
-            btnTransactions.Size = new Size(210, 50);
+            btnTransactions.Size = new Size(440, 50);
             btnTransactions.TabIndex = 8;
             btnTransactions.Text = "Transakcje";
             btnTransactions.UseVisualStyleBackColor = false;
@@ -166,7 +166,7 @@ namespace Cars4Us
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
-            ClientSize = new Size(550, 495);
+            ClientSize = new Size(550, 405);
             Controls.Add(btnTransactions);
             Controls.Add(btnEmployees);
             Controls.Add(btnOptions);

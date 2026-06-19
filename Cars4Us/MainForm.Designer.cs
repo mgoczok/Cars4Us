@@ -61,7 +61,7 @@ namespace Cars4Us
             btnCars.FlatStyle = FlatStyle.Flat;
             btnCars.Font = new Font("Segoe UI", 13F);
             btnCars.ForeColor = Color.White;
-            btnCars.Location = new Point(75, 160);
+            btnCars.Location = new Point(165, 160);
             btnCars.Name = "btnCars";
             btnCars.Size = new Size(160, 120);
             btnCars.TabIndex = 2;
@@ -80,6 +80,7 @@ namespace Cars4Us
             btnCustomers.ForeColor = Color.White;
             btnCustomers.Location = new Point(255, 160);
             btnCustomers.Name = "btnCustomers";
+            btnCustomers.Visible = false;
             btnCustomers.Size = new Size(160, 120);
             btnCustomers.TabIndex = 3;
             btnCustomers.Text = "👤\r\n\r\nKlienci";
@@ -96,6 +97,7 @@ namespace Cars4Us
             btnTestDrives.ForeColor = Color.White;
             btnTestDrives.Location = new Point(435, 160);
             btnTestDrives.Name = "btnTestDrives";
+            btnTestDrives.Visible = false;
             btnTestDrives.Size = new Size(160, 120);
             btnTestDrives.TabIndex = 4;
             btnTestDrives.Text = "📅\r\n\r\nJazdy próbne";
@@ -110,7 +112,7 @@ namespace Cars4Us
             btnPricing.FlatStyle = FlatStyle.Flat;
             btnPricing.Font = new Font("Segoe UI", 12F);
             btnPricing.ForeColor = Color.White;
-            btnPricing.Location = new Point(615, 160);
+            btnPricing.Location = new Point(255, 300);
             btnPricing.Name = "btnPricing";
             btnPricing.Size = new Size(160, 120);
             btnPricing.TabIndex = 5;
@@ -127,7 +129,7 @@ namespace Cars4Us
             btnOptions.FlatStyle = FlatStyle.Flat;
             btnOptions.Font = new Font("Segoe UI", 12F);
             btnOptions.ForeColor = Color.White;
-            btnOptions.Location = new Point(165, 300);
+            btnOptions.Location = new Point(345, 160);
             btnOptions.Name = "btnOptions";
             btnOptions.Size = new Size(160, 120);
             btnOptions.TabIndex = 6;
@@ -144,7 +146,7 @@ namespace Cars4Us
             btnEmployees.FlatStyle = FlatStyle.Flat;
             btnEmployees.Font = new Font("Segoe UI", 13F);
             btnEmployees.ForeColor = Color.White;
-            btnEmployees.Location = new Point(345, 300);
+            btnEmployees.Location = new Point(525, 160);
             btnEmployees.Name = "btnEmployees";
             btnEmployees.Size = new Size(160, 120);
             btnEmployees.TabIndex = 7;
@@ -161,7 +163,7 @@ namespace Cars4Us
             btnTransactions.FlatStyle = FlatStyle.Flat;
             btnTransactions.Font = new Font("Segoe UI", 13F);
             btnTransactions.ForeColor = Color.White;
-            btnTransactions.Location = new Point(525, 300);
+            btnTransactions.Location = new Point(435, 300);
             btnTransactions.Name = "btnTransactions";
             btnTransactions.Size = new Size(160, 120);
             btnTransactions.TabIndex = 8;
